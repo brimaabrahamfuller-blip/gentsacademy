@@ -84,7 +84,7 @@ function checkAuthStatus() {
     const session = localStorage.getItem('gentsacademy_session');
     if (session) {
         const user = JSON.parse(session);
-        const navLinks = document.querySelector('.nav-links');
+        const navLinks = document.querySelector('.navbar-menu');
         if (navLinks) {
             const loginLink = Array.from(navLinks.querySelectorAll('a')).find(a => a.textContent === 'Login');
             if (loginLink) {

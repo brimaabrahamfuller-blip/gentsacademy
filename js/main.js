@@ -1,259 +1,96 @@
 /* ===========================
    MAIN APPLICATION SCRIPT
-   Landing Page Functionality
    =========================== */
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     initializePage();
+    loadFeaturedCourses();
+    initAnimations();
 });
 
-/**
- * Initialize landing page
- */
 function initializePage() {
-    console.log(`${APP_CONFIG.appName} v${APP_CONFIG.appVersion} initialized`);
-    
-    // Initialize smooth scrolling for anchor links
+    console.log("GentsAcademy v2.0 Initialized");
     initSmoothScroll();
-    
-    // Initialize course card interactions
-    initCourseCards();
-    
-    // Initialize button interactions
-    initButtons();
-    
-    // Check if user is logged in
     checkAuthStatus();
 }
 
-/**
- * Initialize smooth scroll behavior
- */
+async function loadFeaturedCourses() {
+    try {
+        const response = await fetch('data/courses.json');
+        const data = await response.json();
+        const container = document.getElementById('featured-courses-container');
+        
+        if (!container) return;
+
+        // Show only first 3 courses on homepage
+        const featured = data.courses.slice(0, 3);
+        
+        container.innerHTML = featured.map(course => `
+            <div class="card course-card animate-fade-up">
+                <div class="course-thumb">
+                    <img src="${course.thumbnail}" alt="${course.title}" style="width:100%; height:200px; object-fit:cover; border-radius: var(--radius-md) var(--radius-md) 0 0;">
+                </div>
+                <div class="course-info" style="padding: var(--spacing-md);">
+                    <span class="course-category" style="color: var(--lib-red); font-weight:600; font-size:0.8rem; text-transform:uppercase;">${course.category}</span>
+                    <h3 style="margin: 0.5rem 0;">${course.title}</h3>
+                    <p style="color: var(--text-muted); font-size:0.9rem; margin-bottom: 1rem;">${course.description.substring(0, 80)}...</p>
+                    <div class="course-meta" style="display:flex; justify-content:space-between; font-size:0.85rem; color:var(--text-muted); margin-bottom:1.5rem;">
+                        <span><i class="far fa-clock"></i> ${course.duration}</span>
+                        <span><i class="far fa-star text-lib-gold"></i> ${course.rating}</span>
+                    </div>
+                    <a href="course-detail.html?id=${course.id}" class="btn btn-primary" style="width:100%; text-align:center;">View Course</a>
+                </div>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error('Error loading courses:', error);
+    }
+}
+
+function initAnimations() {
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-fade-up').forEach(el => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(30px)";
+        el.style.transition = "all 0.8s ease-out";
+        observer.observe(el);
+    });
+}
+
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             if (href === '#') return;
-            
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                target.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
 }
 
-/**
- * Initialize course card hover effects and animations
- */
-function initCourseCards() {
-    const courseCards = document.querySelectorAll('.course-card');
-    
-    courseCards.forEach((card, index) => {
-        // Stagger animation on page load
-        card.style.animation = `fadeIn 0.6s ease-out ${index * 0.1}s backwards`;
-        
-        // Add interactive class on hover
-        card.addEventListener('mouseenter', function() {
-            this.style.transition = 'all 0.3s ease-in-out';
-        });
-    });
-}
-
-/**
- * Initialize button interactions
- */
-function initButtons() {
-    // Explore button - redirect to courses page
-    document.querySelectorAll('.btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            
-            // If it's an internal link, handle navigation
-            if (href && !href.startsWith('http')) {
-                // Let the default behavior handle it
-                return;
-            }
-        });
-    });
-}
-
-/**
- * Check authentication status on landing page
- */
 function checkAuthStatus() {
-    try {
-        const session = localStorage.getItem('gentsacademy_session');
-        if (session) {
-            const user = JSON.parse(session);
-            console.log(`User logged in: ${user.email}`);
-            
-            // Could update navbar to show user profile, etc.
-            updateNavbarForLoggedInUser(user);
+    const session = localStorage.getItem('gentsacademy_session');
+    if (session) {
+        const user = JSON.parse(session);
+        const navLinks = document.querySelector('.nav-links');
+        if (navLinks) {
+            const loginLink = Array.from(navLinks.querySelectorAll('a')).find(a => a.textContent === 'Login');
+            if (loginLink) {
+                loginLink.textContent = 'Dashboard';
+                loginLink.href = 'dashboard.html';
+            }
         }
-    } catch (error) {
-        console.log('No active session found');
     }
-}
-
-/**
- * Update navbar for logged-in users
- */
-function updateNavbarForLoggedInUser(user) {
-    const navMenu = document.querySelector('.navbar-menu');
-    
-    if (!navMenu) return;
-    
-    // Find and update login/signup buttons
-    const loginBtn = navMenu.querySelector('.btn-login');
-    const signupBtn = navMenu.querySelector('.btn-signup');
-    
-    if (loginBtn && signupBtn) {
-        loginBtn.textContent = 'Dashboard';
-        loginBtn.href = 'dashboard.html';
-        
-        signupBtn.textContent = 'Logout';
-        signupBtn.href = '#';
-        signupBtn.onclick = logout;
-    }
-}
-
-/**
- * Handle logout
- */
-function logout(e) {
-    e.preventDefault();
-    
-    if (confirm('Are you sure you want to logout?')) {
-        localStorage.removeItem('gentsacademy_session');
-        localStorage.removeItem('gentsacademy_user');
-        window.location.href = 'index.html';
-    }
-}
-
-/**
- * Utility: Get current user from localStorage
- */
-function getCurrentUser() {
-    try {
-        const session = localStorage.getItem('gentsacademy_session');
-        if (session) {
-            return JSON.parse(session);
-        }
-    } catch (error) {
-        console.error('Error parsing session:', error);
-    }
-    return null;
-}
-
-/**
- * Utility: Check if user is authenticated
- */
-function isUserAuthenticated() {
-    return getCurrentUser() !== null;
-}
-
-/**
- * Utility: Store session
- */
-function storeSession(user) {
-    localStorage.setItem('gentsacademy_session', JSON.stringify(user));
-}
-
-/**
- * Utility: Clear session
- */
-function clearSession() {
-    localStorage.removeItem('gentsacademy_session');
-    localStorage.removeItem('gentsacademy_user');
-}
-
-/**
- * Utility: Format date
- */
-function formatDate(date) {
-    const options = {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    };
-    return new Date(date).toLocaleDateString('en-US', options);
-}
-
-/**
- * Utility: Show notification (toast-like message)
- */
-function showNotification(message, type = 'info') {
-    const notification = document.createElement('div');
-    notification.className = `notification notification-${type}`;
-    notification.textContent = message;
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background-color: var(--bg-secondary);
-        color: var(--text-primary);
-        padding: 1rem 1.5rem;
-        border-radius: var(--radius-lg);
-        border: 1px solid var(--border-color);
-        border-left: 4px solid var(--gold);
-        z-index: 9999;
-        animation: slideInRight 0.3s ease-out;
-        max-width: 400px;
-    `;
-    
-    document.body.appendChild(notification);
-    
-    // Auto-remove after 5 seconds
-    setTimeout(() => {
-        notification.style.animation = 'slideInRight 0.3s ease-out reverse';
-        setTimeout(() => notification.remove(), 300);
-    }, 5000);
-}
-
-/**
- * Utility: Debounce function
- */
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-/**
- * Utility: Throttle function
- */
-function throttle(func, limit) {
-    let inThrottle;
-    return function(...args) {
-        if (!inThrottle) {
-            func.apply(this, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
-}
-
-// Export functions for use in other modules
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = {
-        getCurrentUser,
-        isUserAuthenticated,
-        storeSession,
-        clearSession,
-        formatDate,
-        showNotification,
-        debounce,
-        throttle
-    };
 }

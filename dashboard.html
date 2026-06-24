@@ -3,152 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - GentsAcademy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Dashboard | GentsAcademy</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-    <!-- Navigation -->
+<body style="background: #f4f7f6;">
     <nav class="navbar">
-        <div class="container">
-            <div class="navbar-content">
-                <div class="navbar-brand">
-                    <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
-                        <div class="logo-placeholder">GA</div>
-                        <span class="brand-text">GentsAcademy</span>
-                    </a>
-                </div>
-                <ul class="navbar-menu">
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
-                    <li><button id="logoutBtn" class="btn-signup" style="background: linear-gradient(135deg, #C9A84C, #D9B85D); color: #0D1B4B !important; border: none; cursor: pointer;">Logout</button></li>
-                </ul>
-            </div>
+        <div class="nav-logo">GentsAcademy</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        </ul>
+        <div id="user-profile" style="display: flex; align-items: center; gap: 10px;">
+            <button id="logout-btn" class="btn btn-sm" style="background: transparent; border: 1px solid var(--lib-red); color: var(--lib-red); padding: 5px 12px; font-size: 0.8rem;">Logout</button>
+            <div class="avatar" style="width: 35px; height: 35px; background: var(--lib-blue); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700;">U</div>
         </div>
     </nav>
 
-    <!-- Dashboard Header -->
-    <section class="dashboard-header">
-        <div class="container">
-            <div class="welcome-section">
-                <h1>Welcome back, <span id="userName"></span>! 👋</h1>
-                <p id="userEmail"></p>
-            </div>
-        </div>
-    </section>
+    <main class="container" style="margin-top: 100px; padding: 0 5%; max-width: 1200px; margin-left: auto; margin-right: auto;">
+        <header class="dashboard-header" style="margin-bottom: var(--spacing-lg);">
+            <h1 class="display-font">Welcome Back, <span id="welcome-name" class="text-lib-blue">Student</span>!</h1>
+            <p>You have <span id="course-count">0</span> courses in progress.</p>
+        </header>
 
-    <!-- Tab Navigation -->
-    <nav class="dashboard-tabs">
-        <div class="container">
-            <button class="tab-link active" data-tab="courses">My Courses</button>
-            <button class="tab-link" data-tab="certificates">Certificates</button>
-            <button class="tab-link" data-tab="settings">Account Settings</button>
-        </div>
-    </nav>
-
-    <!-- Dashboard Content -->
-    <div class="dashboard-container">
-        <div class="container">
-            <!-- My Courses Tab -->
-            <div id="coursesTab" class="tab-pane active">
-                <h2>My Learning Journey</h2>
-                <p class="section-subtitle">Continue learning and earn certificates</p>
-                
-                <div id="enrolledCoursesList" class="enrolled-courses-grid">
-                    <!-- Courses will be populated here -->
-                </div>
-
-                <div id="noCoursesMessage" class="empty-state" style="display: none;">
-                    <p>You haven't enrolled in any courses yet.</p>
-                    <a href="courses.html" class="btn btn-primary">Explore Courses</a>
-                </div>
-            </div>
-
-            <!-- Certificates Tab -->
-            <div id="certificatesTab" class="tab-pane">
-                <h2>Your Certificates</h2>
-                <p class="section-subtitle">Download and share your achievements</p>
-                
-                <div id="certificatesList" class="certificates-grid">
-                    <!-- Certificates will be populated here -->
-                </div>
-
-                <div id="noCertificatesMessage" class="empty-state" style="display: none;">
-                    <p>Complete courses to earn certificates.</p>
-                    <a href="courses.html" class="btn btn-primary">Start Learning</a>
-                </div>
-            </div>
-
-            <!-- Settings Tab -->
-            <div id="settingsTab" class="tab-pane">
-                <h2>Account Settings</h2>
-                
-                <div class="settings-section">
-                    <h3>Profile Information</h3>
-                    <div class="settings-form">
-                        <div class="form-group">
-                            <label class="form-label">Full Name</label>
-                            <input type="text" id="settingsName" class="form-input" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Email Address</label>
-                            <input type="email" id="settingsEmail" class="form-input" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Member Since</label>
-                            <input type="text" id="settingsJoinDate" class="form-input" readonly>
-                        </div>
+        <div class="dashboard-grid" style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-lg);">
+            <section class="enrolled-courses">
+                <h2 class="display-font" style="margin-bottom: var(--spacing-md);">My <span class="text-lib-red">Courses</span></h2>
+                <div id="enrolled-container" style="display: grid; gap: var(--spacing-md);">
+                    <!-- Enrolled course cards -->
+                    <div class="card" style="padding: 2rem; text-align: center;">
+                        <p>You haven't enrolled in any courses yet.</p>
+                        <a href="courses.html" class="btn btn-primary mt-sm" style="margin-top: 1rem;">Browse Courses</a>
                     </div>
                 </div>
+            </section>
 
-                <div class="settings-section">
-                    <h3>Preferences</h3>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="notificationsToggle" checked>
-                        <span>Receive email notifications about new courses</span>
-                    </label>
-                </div>
+            <aside class="dashboard-sidebar">
+                <section class="certificates-section card" style="margin-bottom: var(--spacing-md); padding: var(--spacing-md);">
+                    <h3 class="display-font" style="font-size: 1.2rem;"><i class="fas fa-award text-lib-gold"></i> Certificates</h3>
+                    <div id="certificates-container" style="margin-top: 1rem;">
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Complete a course to earn your certificate.</p>
+                    </div>
+                </section>
 
-                <div class="settings-section danger-zone">
-                    <h3>Danger Zone</h3>
-                    <p>Delete your account and all associated data.</p>
-                    <button id="deleteAccountBtn" class="btn btn-danger">Delete Account</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>GentsAcademy</h4>
-                    <p>Free, quality education for Liberia's future leaders.</p>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
+                <section class="activity-feed card" style="padding: var(--spacing-md);">
+                    <h3 class="display-font" style="font-size: 1.2rem;"><i class="fas fa-history text-lib-blue"></i> Recent Activity</h3>
+                    <ul id="activity-list" style="margin-top: 1rem; font-size: 0.9rem; list-style: none;">
+                        <li style="margin-bottom: 0.8rem; border-left: 2px solid var(--lib-blue); padding-left: 10px;">Joined GentsAcademy!</li>
                     </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 GentsAcademy. Built with 💙 for Liberia.</p>
-            </div>
+                </section>
+            </aside>
         </div>
-    </footer>
+    </main>
 
-    <!-- jsPDF for professional certificate PDFs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="js/config.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/certificate.js"></script>
+    <style>
+        .progress-card {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+        }
+        .progress-ring {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: conic-gradient(var(--lib-blue) 0%, #eee 0%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .progress-ring::after {
+            content: attr(data-percent) '%';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+        @media (max-width: 992px) {
+            .dashboard-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+
     <script src="js/dashboard.js"></script>
 </body>
 </html>

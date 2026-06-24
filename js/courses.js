@@ -1,286 +1,103 @@
-/* ===========================
-   COURSES PAGE FUNCTIONALITY
-   =========================== */
-
 let allCourses = [];
-let filteredCourses = [];
-let currentFilter = 'all';
-let currentSort = 'newest';
 
-document.addEventListener('DOMContentLoaded', function() {
-    initializeCoursesPage();
+document.addEventListener('DOMContentLoaded', () => {
+    fetchCourses();
+    setupFilters();
+    checkAuthStatus();
 });
 
-/**
- * Initialize courses page
- */
-async function initializeCoursesPage() {
-    try {
-        // Load courses from JSON
-        await loadCourses();
-        
-        // Set up filter buttons
-        initializeFilters();
-        
-        // Set up search
-        initializeSearch();
-        
-        // Set up sorting
-        initializeSorting();
-        
-        // Display all courses initially
-        displayCourses(allCourses);
-        
-        // Check auth status
-        checkAuthStatus();
-    } catch (error) {
-        console.error('Error initializing courses page:', error);
-        showNotification('Error loading courses. Please refresh the page.', 'error');
-    }
-}
-
-/**
- * Load courses from JSON file
- */
-async function loadCourses() {
+async function fetchCourses() {
     try {
         const response = await fetch('data/courses.json');
-        if (!response.ok) throw new Error('Failed to load courses');
-        
         const data = await response.json();
-        allCourses = data.courses || [];
-        filteredCourses = [...allCourses];
-        
-        console.log(`Loaded ${allCourses.length} courses`);
+        allCourses = data.courses;
+        displayCourses(allCourses);
     } catch (error) {
-        console.error('Error loading courses:', error);
-        throw error;
+        console.error('Error fetching courses:', error);
     }
 }
 
-/**
- * Initialize filter buttons
- */
-function initializeFilters() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            // Update active state
-            filterButtons.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Apply filter
-            currentFilter = this.dataset.filter;
-            applyFilters();
-        });
-    });
-}
-
-/**
- * Initialize search functionality
- */
-function initializeSearch() {
-    const searchInput = document.getElementById('searchInput');
-    
-    if (searchInput) {
-        searchInput.addEventListener('input', debounce(function(e) {
-            applyFilters();
-        }, 300));
-    }
-}
-
-/**
- * Initialize sorting
- */
-function initializeSorting() {
-    const sortSelect = document.getElementById('sortSelect');
-    
-    if (sortSelect) {
-        sortSelect.addEventListener('change', function(e) {
-            currentSort = e.target.value;
-            applyFilters();
-        });
-    }
-}
-
-/**
- * Apply filters and search
- */
-function applyFilters() {
-    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    
-    // Filter by category and search
-    let result = allCourses.filter(course => {
-        const matchesCategory = currentFilter === 'all' || course.category === currentFilter;
-        const matchesSearch = !searchTerm || 
-                            course.title.toLowerCase().includes(searchTerm) ||
-                            course.description.toLowerCase().includes(searchTerm) ||
-                            course.category.toLowerCase().includes(searchTerm);
-        
-        return matchesCategory && matchesSearch;
-    });
-    
-    // Apply sorting
-    result = sortCourses(result, currentSort);
-    
-    // Display results
-    filteredCourses = result;
-    displayCourses(result);
-}
-
-/**
- * Sort courses based on selected option
- */
-function sortCourses(courses, sortType) {
-    const sorted = [...courses];
-    
-    switch(sortType) {
-        case 'rating':
-            return sorted.sort((a, b) => b.rating - a.rating);
-        
-        case 'popular':
-            return sorted.sort((a, b) => b.students - a.students);
-        
-        case 'duration-short':
-            return sorted.sort((a, b) => {
-                const durationA = parseInt(a.duration);
-                const durationB = parseInt(b.duration);
-                return durationA - durationB;
-            });
-        
-        case 'duration-long':
-            return sorted.sort((a, b) => {
-                const durationA = parseInt(a.duration);
-                const durationB = parseInt(b.duration);
-                return durationB - durationA;
-            });
-        
-        case 'newest':
-        default:
-            return sorted;
-    }
-}
-
-/**
- * Display courses in grid
- */
 function displayCourses(courses) {
-    const coursesGrid = document.getElementById('coursesGrid');
-    const noResults = document.getElementById('noResults');
-    
-    if (!coursesGrid) return;
-    
-    // Clear grid
-    coursesGrid.innerHTML = '';
-    
+    const container = document.getElementById('courses-container');
+    if (!container) return;
+
     if (courses.length === 0) {
-        noResults.style.display = 'block';
+        container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 3rem;"><h3>No courses found</h3></div>';
         return;
     }
-    
-    noResults.style.display = 'none';
-    
-    // Create course cards
-    courses.forEach((course, index) => {
-        const card = createCourseCard(course, index);
-        coursesGrid.appendChild(card);
+
+    container.innerHTML = courses.map(course => `
+        <div class="card course-card" style="opacity: 0; transform: translateY(20px); transition: all 0.5s ease; overflow: hidden; display: flex; flex-direction: column;">
+            <div class="course-thumb">
+                <img src="${course.thumbnail}" alt="${course.title}" style="width:100%; height:180px; object-fit:cover;">
+            </div>
+            <div class="course-info" style="padding: var(--spacing-md); flex-grow: 1; display: flex; flex-direction: column;">
+                <span class="course-category" style="color: var(--lib-red); font-weight:600; font-size:0.8rem; text-transform: uppercase;">${course.category}</span>
+                <h3 style="margin: 0.5rem 0; font-size: 1.2rem; font-family: 'Syne', sans-serif;">${course.title}</h3>
+                <div class="course-meta" style="display:flex; justify-content:space-between; font-size:0.8rem; color:var(--text-muted); margin-bottom:1.5rem; margin-top: auto;">
+                    <span><i class="far fa-clock"></i> ${course.duration}</span>
+                    <span style="background: rgba(0,40,104,0.1); color: var(--lib-blue); padding: 2px 8px; border-radius: 4px; font-weight: 600;">${course.level}</span>
+                </div>
+                <a href="course-detail.html?id=${course.id}" class="btn btn-primary" style="width:100%; text-align:center;">Enroll Now</a>
+            </div>
+        </div>
+    `).join('');
+
+    // Trigger entrance animation
+    setTimeout(() => {
+        const cards = container.querySelectorAll('.course-card');
+        cards.forEach((card, i) => {
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, i * 50);
+        });
+    }, 10);
+}
+
+function setupFilters() {
+    const searchInput = document.getElementById('course-search');
+    const filterBtns = document.querySelectorAll('.btn-filter');
+
+    if (searchInput) {
+        searchInput.addEventListener('input', () => filterCourses());
+    }
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            filterCourses();
+        });
     });
 }
 
-/**
- * Create a course card element
- */
-function createCourseCard(course, index) {
-    const card = document.createElement('div');
-    card.className = 'course-card';
-    card.style.animation = `fadeIn 0.6s ease-out ${index * 0.1}s backwards`;
-    
-    const badgeClass = course.category === 'AI' ? 'ai' : course.category === 'Technology' ? 'tech' : '';
-    
-    card.innerHTML = `
-        <div class="course-badge ${badgeClass}">${course.category}</div>
-        <h3>${course.title}</h3>
-        <p>${course.description}</p>
-        <div class="course-meta">
-            <span class="level">⭐ ${course.level}</span>
-            <span class="duration">⏱ ${course.duration}</span>
-        </div>
-        <div class="course-stats">
-            <div class="rating-info">
-                <span class="stars">★★★★★</span>
-                <span class="rating-value">${course.rating}</span>
-            </div>
-            <div class="students-info">
-                <span class="students">${(course.students / 1000).toFixed(1)}K students</span>
-            </div>
-        </div>
-        <button class="btn btn-card" data-course-id="${course.id}">Explore Course</button>
-    `;
-    
-    // Add click handler
-    const button = card.querySelector('.btn-card');
-    button.addEventListener('click', function() {
-        goToCourseDetail(course.id);
+function filterCourses() {
+    const searchInput = document.getElementById('course-search');
+    const searchTerm = searchInput ? searchInput.value.toLowerCase() : "";
+    const activeBtn = document.querySelector('.btn-filter.active');
+    const activeCategory = activeBtn ? activeBtn.dataset.category : 'all';
+
+    const filtered = allCourses.filter(course => {
+        const matchesSearch = course.title.toLowerCase().includes(searchTerm) || 
+                             course.description.toLowerCase().includes(searchTerm);
+        const matchesCategory = activeCategory === 'all' || course.category === activeCategory;
+        return matchesSearch && matchesCategory;
     });
-    
-    return card;
+
+    displayCourses(filtered);
 }
 
-/**
- * Navigate to course detail page
- */
-function goToCourseDetail(courseId) {
-    // Store selected course in session storage
-    sessionStorage.setItem('selectedCourse', courseId);
-    window.location.href = `course-detail.html?id=${courseId}`;
-}
-
-/**
- * Check authentication and update navbar
- */
 function checkAuthStatus() {
-    try {
-        const session = localStorage.getItem('gentsacademy_session');
-        if (session) {
-            const user = JSON.parse(session);
-            updateNavbarForLoggedInUser(user);
+    const session = localStorage.getItem('gentsacademy_session');
+    if (session) {
+        const navLinks = document.querySelector('.nav-links');
+        if (navLinks) {
+            const loginLink = Array.from(navLinks.querySelectorAll('a')).find(a => a.textContent === 'Login');
+            if (loginLink) {
+                loginLink.textContent = 'Dashboard';
+                loginLink.href = 'dashboard.html';
+            }
         }
-    } catch (error) {
-        console.log('No active session');
-    }
-}
-
-/**
- * Update navbar for logged-in users
- */
-function updateNavbarForLoggedInUser(user) {
-    const navMenu = document.querySelector('.navbar-menu');
-    
-    if (!navMenu) return;
-    
-    const loginBtn = navMenu.querySelector('.btn-login');
-    const signupBtn = navMenu.querySelector('.btn-signup');
-    
-    if (loginBtn && signupBtn) {
-        loginBtn.textContent = 'Dashboard';
-        loginBtn.href = 'dashboard.html';
-        
-        signupBtn.textContent = 'Logout';
-        signupBtn.href = '#';
-        signupBtn.onclick = logout;
-    }
-}
-
-/**
- * Handle logout
- */
-function logout(e) {
-    e.preventDefault();
-    
-    if (confirm('Are you sure you want to logout?')) {
-        localStorage.removeItem('gentsacademy_session');
-        localStorage.removeItem('gentsacademy_user');
-        window.location.href = 'index.html';
     }
 }

@@ -3,193 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - GentsAcademy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Admin Panel | GentsAcademy</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-content">
-                <div class="navbar-brand">
-                    <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
-                        <div class="logo-placeholder">GA</div>
-                        <span class="brand-text">GentsAcademy</span>
-                    </a>
-                </div>
-                <ul class="navbar-menu">
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><button id="adminLogoutBtn" class="btn-signup" style="background: linear-gradient(135deg, #C9A84C, #D9B85D); color: #0D1B4B !important; border: none; cursor: pointer;">Logout</button></li>
+<body style="background: #f8f9fa;">
+    <div class="admin-layout" style="display: flex; min-height: 100vh;">
+        <!-- Sidebar -->
+        <aside style="width: 250px; background: var(--lib-blue); color: white; padding: 2rem;">
+            <div class="nav-logo" style="color: white; margin-bottom: 3rem; font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800;">GentsAdmin</div>
+            <nav>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; padding: 0;">
+                    <li><a href="#" class="active" style="display: block; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 8px; color: white;"><i class="fas fa-book" style="margin-right: 10px;"></i> Courses</a></li>
+                    <li><a href="#" style="display: block; padding: 10px; color: rgba(255,255,255,0.7);"><i class="fas fa-users" style="margin-right: 10px;"></i> Users</a></li>
+                    <li><a href="#" style="display: block; padding: 10px; color: rgba(255,255,255,0.7);"><i class="fas fa-chart-line" style="margin-right: 10px;"></i> Reports</a></li>
+                    <li><a href="index.html" style="display: block; padding: 10px; margin-top: 5rem; color: rgba(255,255,255,0.7);"><i class="fas fa-sign-out-alt" style="margin-right: 10px;"></i> Exit</a></li>
                 </ul>
-            </div>
-        </div>
-    </nav>
+            </nav>
+        </aside>
 
-    <!-- Admin Header -->
-    <section class="admin-header">
-        <div class="container">
-            <h1>🔐 Admin Dashboard</h1>
-            <p>Manage courses, students, and certificates</p>
-        </div>
-    </section>
+        <!-- Main Content -->
+        <main style="flex: 1; padding: 3rem;">
+            <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem;">
+                <h1 class="display-font" style="margin: 0;">Course Management</h1>
+                <button class="btn btn-primary"><i class="fas fa-plus"></i> Add New Course</button>
+            </header>
 
-    <!-- Admin Tabs -->
-    <nav class="admin-tabs">
-        <div class="container">
-            <button class="admin-tab-link active" data-tab="overview">Overview</button>
-            <button class="admin-tab-link" data-tab="courses">Manage Courses</button>
-            <button class="admin-tab-link" data-tab="students">Students</button>
-            <button class="admin-tab-link" data-tab="certificates">Certificates</button>
-        </div>
-    </nav>
-
-    <!-- Admin Content -->
-    <div class="admin-container">
-        <div class="container">
-            <!-- Overview Tab -->
-            <div id="overviewTab" class="admin-tab-pane active">
-                <h2>System Overview</h2>
-                
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon">👥</div>
-                        <div class="stat-content">
-                            <div class="stat-label">Total Students</div>
-                            <div class="stat-value" id="totalStudents">0</div>
-                        </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon">📚</div>
-                        <div class="stat-content">
-                            <div class="stat-label">Total Courses</div>
-                            <div class="stat-value" id="totalCourses">0</div>
-                        </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon">📚</div>
-                        <div class="stat-content">
-                            <div class="stat-label">Total Enrollments</div>
-                            <div class="stat-value" id="totalEnrollments">0</div>
-                        </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon">🎓</div>
-                        <div class="stat-content">
-                            <div class="stat-label">Certificates Issued</div>
-                            <div class="stat-value" id="totalCertificates">0</div>
-                        </div>
-                    </div>
+            <div class="stats-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem;">
+                <div class="card" style="padding: 1.5rem; border-left: 5px solid var(--lib-blue); background: white;">
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Total Students</p>
+                    <h2 style="margin: 10px 0 0 0; font-family: 'Syne', sans-serif;">15,402</h2>
                 </div>
-
-                <div class="activity-section">
-                    <h3>Recent Activity</h3>
-                    <div id="recentActivity" class="activity-list">
-                        <!-- Activity will be populated here -->
-                    </div>
+                <div class="card" style="padding: 1.5rem; border-left: 5px solid var(--lib-red); background: white;">
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Active Courses</p>
+                    <h2 style="margin: 10px 0 0 0; font-family: 'Syne', sans-serif;">24</h2>
+                </div>
+                <div class="card" style="padding: 1.5rem; border-left: 5px solid var(--lib-gold); background: white;">
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">Certificates Issued</p>
+                    <h2 style="margin: 10px 0 0 0; font-family: 'Syne', sans-serif;">1,280</h2>
                 </div>
             </div>
 
-            <!-- Manage Courses Tab -->
-            <div id="coursesTab" class="admin-tab-pane">
-                <h2>Manage Courses</h2>
-                
-                <div class="courses-management">
-                    <button class="btn btn-primary" id="addCourseBtn">+ Add New Course</button>
-                    
-                    <div id="coursesList" class="admin-courses-list">
-                        <!-- Courses will be listed here -->
-                    </div>
-                </div>
-
-                <!-- Add/Edit Course Modal -->
-                <div id="courseModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <h2 id="courseModalTitle">Add New Course</h2>
-                        <form id="courseForm">
-                            <div class="form-group">
-                                <label class="form-label">Course Title</label>
-                                <input type="text" id="courseTitleInput" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Category</label>
-                                <select id="courseCategoryInput" class="form-input">
-                                    <option>Business</option>
-                                    <option>AI</option>
-                                    <option>Technology</option>
-                                    <option>Combined</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Description</label>
-                                <textarea id="courseDescriptionInput" class="form-input" rows="4"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Save Course</button>
-                        </form>
-                    </div>
-                </div>
+            <div class="card" style="padding: 0; overflow: hidden; background: white; border-radius: 12px;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead style="background: #f1f1f1;">
+                        <tr>
+                            <th style="padding: 1.2rem;">Course Title</th>
+                            <th style="padding: 1.2rem;">Category</th>
+                            <th style="padding: 1.2rem;">Students</th>
+                            <th style="padding: 1.2rem;">Rating</th>
+                            <th style="padding: 1.2rem;">Status</th>
+                            <th style="padding: 1.2rem;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-courses-table">
+                        <!-- Course rows will be injected -->
+                    </tbody>
+                </table>
             </div>
-
-            <!-- Students Tab -->
-            <div id="studentsTab" class="admin-tab-pane">
-                <h2>Student Management</h2>
-                
-                <div class="students-section">
-                    <div class="search-bar">
-                        <input 
-                            type="text" 
-                            id="studentSearchInput" 
-                            placeholder="Search students by name or email..."
-                            class="search-input"
-                        >
-                    </div>
-
-                    <div id="studentsList" class="admin-students-list">
-                        <!-- Students will be listed here -->
-                    </div>
-
-                    <div id="noStudentsMessage" class="empty-state">
-                        <p>No students found.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Certificates Tab -->
-            <div id="certificatesTab" class="admin-tab-pane">
-                <h2>Certificate Management</h2>
-                
-                <div class="certificates-section">
-                    <div id="certificatesList" class="admin-certificates-list">
-                        <!-- Certificates will be listed here -->
-                    </div>
-
-                    <div id="noCertificatesMessage" class="empty-state">
-                        <p>No certificates issued yet.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </main>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom">
-                <p>&copy; 2025 GentsAcademy Admin. Built with 💙 for Liberia.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- jsPDF for professional certificate PDFs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="js/config.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/certificate.js"></script>
     <script src="js/admin.js"></script>
 </body>
 </html>

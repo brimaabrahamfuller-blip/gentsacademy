@@ -3,333 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login / Register - GentsAcademy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Login / Register | GentsAcademy</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .auth-container {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: var(--sp-lg);
-        }
-
-        .auth-wrapper {
-            width: 100%;
-            max-width: 420px;
-        }
-
-        .auth-card {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: var(--sp-2xl);
-        }
-
-        .auth-header {
-            text-align: center;
-            margin-bottom: var(--sp-2xl);
-        }
-
-        .auth-header h1 {
-            color: var(--text-primary);
-            margin-bottom: var(--sp-sm);
-        }
-
-        .auth-header p {
-            color: var(--text-secondary);
-        }
-
-        .form-group {
-            margin-bottom: var(--sp-lg);
-        }
-
-        .form-label {
-            display: block;
-            color: var(--text-primary);
-            font-weight: 600;
-            margin-bottom: var(--sp-sm);
-            font-size: var(--fs-small);
-        }
-
-        .form-input {
-            width: 100%;
-            padding: var(--sp-md);
-            background-color: var(--bg-primary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            color: var(--text-primary);
-            font-size: var(--fs-body);
-            transition: all var(--transition-base);
-            font-family: var(--font-ui);
-        }
-
-        .form-input::placeholder {
-            color: var(--text-muted);
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--gold);
-            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
-        }
-
-        .form-error {
-            color: #ef4444;
-            font-size: var(--fs-small);
-            margin-top: 0.5rem;
-            display: none;
-        }
-
-        .form-error.show {
-            display: block;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: var(--sp-md) var(--sp-lg);
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            color: var(--navy);
-            border: none;
-            border-radius: var(--radius-lg);
-            font-weight: 600;
-            font-size: var(--fs-body);
-            cursor: pointer;
-            transition: all var(--transition-base);
-            font-family: var(--font-ui);
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(201, 168, 76, 0.3);
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .form-divider {
-            display: flex;
-            align-items: center;
-            margin: var(--sp-xl) 0;
-            gap: var(--sp-md);
-        }
-
-        .form-divider::before,
-        .form-divider::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background-color: var(--border-color);
-        }
-
-        .form-divider span {
-            color: var(--text-muted);
-            font-size: var(--fs-small);
-        }
-
-        .tab-buttons {
-            display: flex;
-            gap: var(--sp-md);
-            margin-bottom: var(--sp-xl);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .tab-btn {
-            flex: 1;
-            padding: var(--sp-md);
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            font-weight: 600;
-            cursor: pointer;
-            border-bottom: 3px solid transparent;
-            transition: all var(--transition-base);
-            font-family: var(--font-ui);
-        }
-
-        .tab-btn.active {
-            color: var(--gold);
-            border-bottom-color: var(--gold);
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        .toggle-link {
-            text-align: center;
-            margin-top: var(--sp-lg);
-            font-size: var(--fs-small);
-            color: var(--text-secondary);
-        }
-
-        .toggle-link button {
-            background: none;
-            border: none;
-            color: var(--gold);
-            cursor: pointer;
-            font-weight: 600;
-            text-decoration: underline;
-            font-family: var(--font-ui);
-        }
-
-        .loading-spinner {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            border: 2px solid rgba(201, 168, 76, 0.3);
-            border-top-color: var(--gold);
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            margin-right: 0.5rem;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="navbar-content">
-                <div class="navbar-brand">
-                    <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
-                        <div class="logo-placeholder">GA</div>
-                        <span class="brand-text">GentsAcademy</span>
-                    </a>
-                </div>
-                <ul class="navbar-menu">
-                    <li><a href="index.html#features">Why Us</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="index.html#how-it-works">How It Works</a></li>
-                </ul>
+<body style="height: 100vh; overflow: hidden; background: white;">
+    <div class="auth-container" style="display: flex; height: 100%;">
+        <!-- Left Side: Brand Panel -->
+        <div class="auth-panel" style="flex: 1; background: var(--bg-dark); color: white; display: flex; flex-direction: column; justify-content: center; padding: 10%; position: relative;">
+            <div style="position: relative; z-index: 2;">
+                <a href="index.html" class="nav-logo" style="color: white; font-size: 2rem;">GentsAcademy</a>
+                <h1 class="display-font" style="font-size: 3.5rem; margin: 2rem 0; line-height: 1; color: white;">Unlock Your <span class="text-lib-gold">Potential.</span></h1>
+                <p style="font-size: 1.2rem; opacity: 0.8; color: white;">Join thousands of Liberian students learning the skills of tomorrow.</p>
             </div>
+            <!-- Pattern Placeholder -->
+            <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 200px; background: linear-gradient(to top, rgba(191,10,48,0.1), transparent);"></div>
         </div>
-    </nav>
 
-    <!-- Auth Container -->
-    <div class="auth-container">
-        <div class="auth-wrapper">
-            <div class="auth-card">
-                <div class="auth-header">
-                    <h1>GentsAcademy</h1>
-                    <p>Start learning today</p>
+        <!-- Right Side: Form Panel -->
+        <div class="form-panel" style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 5%;">
+            <div class="form-box" style="width: 100%; max-width: 400px;">
+                <div class="form-tabs" style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+                    <button class="tab-btn active" id="login-tab" style="background: none; border: none; font-size: 1.5rem; font-family: 'Syne', sans-serif; font-weight: 700; cursor: pointer; color: var(--lib-blue); border-bottom: 3px solid var(--lib-blue);">Login</button>
+                    <button class="tab-btn" id="register-tab" style="background: none; border: none; font-size: 1.5rem; font-family: 'Syne', sans-serif; font-weight: 700; cursor: pointer; color: #ccc;">Register</button>
                 </div>
 
-                <!-- Tab Buttons -->
-                <div class="tab-buttons">
-                    <button class="tab-btn active" data-tab="login">Login</button>
-                    <button class="tab-btn" data-tab="register">Register</button>
-                </div>
-
-                <!-- Login Form -->
-                <div id="loginTab" class="tab-content active">
-                    <form id="loginForm">
-                        <div class="form-group">
-                            <label class="form-label" for="loginEmail">Email Address</label>
-                            <input 
-                                type="email" 
-                                id="loginEmail" 
-                                class="form-input" 
-                                placeholder="your@email.com"
-                                required
-                            >
-                            <div class="form-error"></div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="loginPassword">Password</label>
-                            <input 
-                                type="password" 
-                                id="loginPassword" 
-                                class="form-input" 
-                                placeholder="••••••••"
-                                required
-                            >
-                            <div class="form-error"></div>
-                        </div>
-
-                        <button type="submit" class="submit-btn">Sign In</button>
-                    </form>
-                </div>
-
-                <!-- Register Form -->
-                <div id="registerTab" class="tab-content">
-                    <form id="registerForm">
-                        <div class="form-group">
-                            <label class="form-label" for="registerName">Full Name</label>
-                            <input 
-                                type="text" 
-                                id="registerName" 
-                                class="form-input" 
-                                placeholder="Your Full Name"
-                                required
-                            >
-                            <div class="form-error"></div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="registerEmail">Email Address</label>
-                            <input 
-                                type="email" 
-                                id="registerEmail" 
-                                class="form-input" 
-                                placeholder="your@email.com"
-                                required
-                            >
-                            <div class="form-error"></div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="registerPassword">Password</label>
-                            <input 
-                                type="password" 
-                                id="registerPassword" 
-                                class="form-input" 
-                                placeholder="At least 8 characters"
-                                required
-                                minlength="8"
-                            >
-                            <div class="form-error"></div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label" for="registerConfirmPassword">Confirm Password</label>
-                            <input 
-                                type="password" 
-                                id="registerConfirmPassword" 
-                                class="form-input" 
-                                placeholder="Confirm your password"
-                                required
-                            >
-                            <div class="form-error"></div>
-                        </div>
-
-                        <button type="submit" class="submit-btn">Create Account</button>
-                    </form>
-                </div>
-
-                <!-- Toggle Link -->
-                <div class="toggle-link">
-                    <span id="toggleText">Don't have an account?</span>
-                    <button id="toggleBtn" onclick="toggleAuthTab(event)">Register here</button>
-                </div>
+                <form id="auth-form" class="animate-fade-up">
+                    <div id="name-field" style="display: none; margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Full Name</label>
+                        <input type="text" id="full-name" placeholder="Enter your name" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: var(--radius-sm);">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email Address</label>
+                        <input type="email" id="email" placeholder="student@example.com" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: var(--radius-sm);">
+                    </div>
+                    <div style="margin-bottom: 2rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Password</label>
+                        <input type="password" id="password" placeholder="••••••••" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: var(--radius-sm);">
+                    </div>
+                    <button type="submit" id="submit-btn" class="btn btn-primary btn-large" style="width: 100%;">Sign In</button>
+                </form>
+                
+                <p id="auth-feedback" style="margin-top: 1rem; text-align: center; font-size: 0.9rem; color: var(--lib-red);"></p>
             </div>
         </div>
     </div>
 
-    <script src="js/config.js"></script>
-    <script src="js/main.js"></script>
+    <style>
+        @media (max-width: 768px) {
+            .auth-panel { display: none !important; }
+        }
+    </style>
+
     <script src="js/auth.js"></script>
 </body>
 </html>

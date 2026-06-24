@@ -3,183 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Details - GentsAcademy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Course Details | GentsAcademy</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
-        <div class="container">
-            <div class="navbar-content">
-                <div class="navbar-brand">
-                    <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
-                        <div class="logo-placeholder">GA</div>
-                        <span class="brand-text">GentsAcademy</span>
-                    </a>
-                </div>
-                <ul class="navbar-menu">
-                    <li><a href="index.html#features">Why Us</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li><a href="index.html#how-it-works">How It Works</a></li>
-                    <li><a href="auth.html" class="btn-login">Login</a></li>
-                    <li><a href="auth.html" class="btn-signup">Sign Up</a></li>
-                </ul>
-            </div>
-        </div>
+        <div class="nav-logo">GentsAcademy</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="auth.html">Login</a></li>
+        </ul>
+        <a href="auth.html" class="btn btn-primary">Join Free</a>
     </nav>
 
-    <!-- Course Header -->
-    <section class="course-detail-header">
-        <div class="container">
-            <a href="courses.html" class="back-link">← Back to Courses</a>
-            <div class="course-header-content">
-                <div class="course-header-main">
-                    <span id="courseBadge" class="course-badge"></span>
-                    <h1 id="courseTitle"></h1>
-                    <p id="courseDescription"></p>
-                    
-                    <div class="course-info-row">
-                        <div class="info-item">
-                            <span class="info-label">Level</span>
-                            <span id="courseLevel" class="info-value"></span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Duration</span>
-                            <span id="courseDuration" class="info-value"></span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Students</span>
-                            <span id="courseStudents" class="info-value"></span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Rating</span>
-                            <span id="courseRating" class="info-value"></span>
-                        </div>
-                    </div>
+    <main id="course-detail-content" style="margin-top: 60px;">
+        <!-- Content will be loaded by course-detail.js -->
+        <div style="text-align: center; padding: 5rem;">Loading course details...</div>
+    </main>
 
-                    <div class="course-actions">
-                        <button id="enrollBtn" class="btn btn-primary btn-large">Enroll Now (Free)</button>
-                        <button id="continueBtn" class="btn btn-secondary btn-large" style="display: none;">Continue Learning</button>
-                    </div>
+    <style>
+        .detail-hero {
+            background: var(--bg-dark);
+            color: white;
+            padding: var(--spacing-xl) 5%;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+        .curriculum-section {
+            padding: var(--spacing-lg) 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .accordion-item {
+            border: 1px solid #eee;
+            margin-bottom: var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            background: white;
+        }
+        .accordion-header {
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: #f9f9f9;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        .accordion-header:hover {
+            background: #f0f0f0;
+        }
+        .accordion-content {
+            padding: var(--spacing-md);
+            display: none;
+            border-top: 1px solid #eee;
+            background: white;
+        }
+        .accordion-item.active .accordion-content {
+            display: block;
+        }
+        .accordion-item.active .accordion-header {
+            background: var(--lib-blue);
+            color: white;
+        }
+        .course-thumb-large {
+            width: 100%;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+        }
+        @media (max-width: 768px) {
+            .detail-hero { grid-template-columns: 1fr; padding: var(--spacing-lg) 5%; }
+            .hero-actions { display: flex; flex-direction: column; gap: 1rem; }
+        }
+    </style>
 
-                    <div id="progressContainer" class="progress-container" style="display: none;">
-                        <div class="progress-label">
-                            <span>Your Progress</span>
-                            <span id="progressPercent">0%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div id="progressFill" class="progress-fill" style="width: 0%;"></div>
-                        </div>
-                        <p id="progressText" class="progress-text"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Learning Outcomes -->
-    <section class="learning-outcomes">
-        <div class="container">
-            <div class="outcomes-grid">
-                <div class="outcomes-column">
-                    <h2>What You'll Learn</h2>
-                    <ul id="learningOutcomesList" class="outcomes-list">
-                        <!-- Populated by JavaScript -->
-                    </ul>
-                </div>
-
-                <div class="outcomes-column">
-                    <div class="course-features-box">
-                        <h3>Course Features</h3>
-                        <ul class="features-list">
-                            <li><span class="feature-icon">📹</span> Video Lectures</li>
-                            <li><span class="feature-icon">📚</span> Reading Materials</li>
-                            <li><span class="feature-icon">✅</span> Quizzes & Assignments</li>
-                            <li><span class="feature-icon">📜</span> Certificate of Completion</li>
-                            <li><span class="feature-icon">♾️</span> Lifetime Access</li>
-                            <li><span class="feature-icon">💯</span> 100% Free</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Curriculum -->
-    <section class="curriculum">
-        <div class="container">
-            <h2>Course Curriculum</h2>
-            <p class="section-subtitle">Learn step-by-step through structured modules</p>
-
-            <div id="curriculumAccordion" class="curriculum-accordion">
-                <!-- Modules will be populated here -->
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Get Started?</h2>
-            <p>Enroll now and begin your learning journey with lifetime access.</p>
-            <button id="enrollBtnCta" class="btn btn-primary btn-large">Enroll Now (Free)</button>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>GentsAcademy</h4>
-                    <p>Free, quality education for Liberia's future leaders.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook">f</a>
-                        <a href="#" aria-label="Twitter">𝕏</a>
-                        <a href="#" aria-label="Instagram">📷</a>
-                        <a href="#" aria-label="LinkedIn">in</a>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Platform</h4>
-                    <ul>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="dashboard.html">Dashboard</a></li>
-                        <li><a href="auth.html">Sign In</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Resources</h4>
-                    <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>About</h4>
-                    <ul>
-                        <li><a href="#">Our Mission</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2025 GentsAcademy. Built with 💙 for Liberia.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- jsPDF for professional certificate PDFs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="js/config.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/course-detail.js"></script>
 </body>
 </html>

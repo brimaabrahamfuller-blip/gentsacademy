@@ -1,0 +1,370 @@
+/* ===========================
+   DASHBOARD STYLES
+   =========================== */
+
+.dashboard-header {
+    background: linear-gradient(135deg, var(--navy), rgba(13, 27, 75, 0.7));
+    padding: var(--sp-2xl) 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.welcome-section h1 {
+    color: var(--text-primary);
+    margin-bottom: var(--sp-sm);
+}
+
+.welcome-section p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.dashboard-tabs {
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+}
+
+.dashboard-tabs .container {
+    display: flex;
+    gap: var(--sp-lg);
+    padding: 0 var(--sp-lg);
+}
+
+.tab-link {
+    padding: var(--sp-md) 0;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all var(--transition-base);
+    font-size: var(--fs-body);
+    font-family: var(--font-ui);
+}
+
+.tab-link:hover {
+    color: var(--text-primary);
+}
+
+.tab-link.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+}
+
+.dashboard-container {
+    padding: var(--sp-2xl) 0;
+    min-height: 60vh;
+}
+
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.tab-pane h2 {
+    color: var(--text-primary);
+    margin-bottom: var(--sp-md);
+}
+
+/* Enrolled Courses Grid */
+.enrolled-courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--sp-lg);
+    margin-top: var(--sp-xl);
+}
+
+.enrolled-course-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-lg);
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+}
+
+.enrolled-course-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(201, 168, 76, 0.15);
+}
+
+.enrolled-course-card h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--sp-md);
+    font-size: 1.1rem;
+}
+
+.course-progress-section {
+    margin-bottom: var(--sp-lg);
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--sp-sm);
+    font-size: var(--fs-small);
+    color: var(--text-secondary);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: var(--bg-primary);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    transition: width 0.5s ease;
+}
+
+.course-meta-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--sp-lg);
+    font-size: var(--fs-small);
+    color: var(--text-muted);
+    padding: var(--sp-md) 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.continue-btn {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+.empty-state {
+    text-align: center;
+    padding: var(--sp-3xl) var(--sp-lg);
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 2px dashed var(--border-color);
+}
+
+.empty-state p {
+    margin-bottom: var(--sp-lg);
+    font-size: 1.1rem;
+}
+
+/* Certificates Grid */
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--sp-lg);
+    margin-top: var(--sp-xl);
+}
+
+.certificate-card {
+    background: linear-gradient(135deg, var(--navy), rgba(13, 27, 75, 0.9));
+    border: 2px solid var(--gold);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-2xl);
+    text-align: center;
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.certificate-card::before {
+    content: '🏆';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 80px;
+    opacity: 0.1;
+}
+
+.certificate-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(201, 168, 76, 0.25);
+}
+
+.certificate-icon {
+    font-size: 3rem;
+    margin-bottom: var(--sp-md);
+}
+
+.certificate-title {
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: var(--sp-sm);
+    text-transform: uppercase;
+    font-size: var(--fs-small);
+    letter-spacing: 0.05em;
+}
+
+.certificate-course-name {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: var(--sp-md);
+    font-weight: 700;
+}
+
+.certificate-date {
+    color: var(--text-secondary);
+    font-size: var(--fs-small);
+    margin-bottom: var(--sp-lg);
+}
+
+.certificate-id {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-bottom: var(--sp-lg);
+    word-break: break-all;
+}
+
+.certificate-actions {
+    display: flex;
+    gap: var(--sp-md);
+    justify-content: center;
+}
+
+.btn-certificate {
+    padding: var(--sp-sm) var(--sp-lg);
+    background-color: rgba(201, 168, 76, 0.2);
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    font-family: var(--font-ui);
+}
+
+.btn-certificate:hover {
+    background-color: var(--gold);
+    color: var(--navy);
+}
+
+/* Settings Styles */
+.settings-section {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-lg);
+    margin-bottom: var(--sp-xl);
+}
+
+.settings-section h3 {
+    color: var(--text-primary);
+    margin-bottom: var(--sp-lg);
+}
+
+.settings-section p {
+    color: var(--text-secondary);
+    margin-bottom: var(--sp-lg);
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-lg);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: var(--sp-sm);
+    font-size: var(--fs-small);
+}
+
+.form-input {
+    padding: var(--sp-md);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: var(--fs-body);
+    font-family: var(--font-ui);
+}
+
+.form-input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-md);
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.checkbox-label input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--gold);
+}
+
+.danger-zone {
+    border-color: #ef4444;
+    background-color: rgba(239, 68, 68, 0.05);
+}
+
+.btn-danger {
+    padding: var(--sp-md) var(--sp-lg);
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    font-family: var(--font-ui);
+}
+
+.btn-danger:hover {
+    background-color: #dc2626;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .dashboard-tabs .container {
+        flex-direction: column;
+        gap: var(--sp-md);
+    }
+
+    .tab-link {
+        padding: var(--sp-md);
+        border-bottom: 3px solid transparent;
+        border-left: 3px solid transparent;
+    }
+
+    .tab-link.active {
+        border-bottom-color: transparent;
+        border-left-color: var(--gold);
+    }
+
+    .enrolled-courses-grid,
+    .certificates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .certificate-card {
+        padding: var(--sp-lg);
+    }
+
+    .certificate-actions {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - GentsAcademy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="navbar-brand">
+                    <a href="index.html" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+                        <div class="logo-placeholder">GA</div>
+                        <span class="brand-text">GentsAcademy</span>
+                    </a>
+                </div>
+                <ul class="navbar-menu">
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><button id="logoutBtn" class="btn-signup" style="background: linear-gradient(135deg, #C9A84C, #D9B85D); color: #0D1B4B !important; border: none; cursor: pointer;">Logout</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <section class="dashboard-header">
+        <div class="container">
+            <div class="welcome-section">
+                <h1>Welcome back, <span id="userName"></span>! 👋</h1>
+                <p id="userEmail"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tab Navigation -->
+    <nav class="dashboard-tabs">
+        <div class="container">
+            <button class="tab-link active" data-tab="courses">My Courses</button>
+            <button class="tab-link" data-tab="certificates">Certificates</button>
+            <button class="tab-link" data-tab="settings">Account Settings</button>
+        </div>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-container">
+        <div class="container">
+            <!-- My Courses Tab -->
+            <div id="coursesTab" class="tab-pane active">
+                <h2>My Learning Journey</h2>
+                <p class="section-subtitle">Continue learning and earn certificates</p>
+                
+                <div id="enrolledCoursesList" class="enrolled-courses-grid">
+                    <!-- Courses will be populated here -->
+                </div>
+
+                <div id="noCoursesMessage" class="empty-state" style="display: none;">
+                    <p>You haven't enrolled in any courses yet.</p>
+                    <a href="courses.html" class="btn btn-primary">Explore Courses</a>
+                </div>
+            </div>
+
+            <!-- Certificates Tab -->
+            <div id="certificatesTab" class="tab-pane">
+                <h2>Your Certificates</h2>
+                <p class="section-subtitle">Download and share your achievements</p>
+                
+                <div id="certificatesList" class="certificates-grid">
+                    <!-- Certificates will be populated here -->
+                </div>
+
+                <div id="noCertificatesMessage" class="empty-state" style="display: none;">
+                    <p>Complete courses to earn certificates.</p>
+                    <a href="courses.html" class="btn btn-primary">Start Learning</a>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div id="settingsTab" class="tab-pane">
+                <h2>Account Settings</h2>
+                
+                <div class="settings-section">
+                    <h3>Profile Information</h3>
+                    <div class="settings-form">
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" id="settingsName" class="form-input" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" id="settingsEmail" class="form-input" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Member Since</label>
+                            <input type="text" id="settingsJoinDate" class="form-input" readonly>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h3>Preferences</h3>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="notificationsToggle" checked>
+                        <span>Receive email notifications about new courses</span>
+                    </label>
+                </div>
+
+                <div class="settings-section danger-zone">
+                    <h3>Danger Zone</h3>
+                    <p>Delete your account and all associated data.</p>
+                    <button id="deleteAccountBtn" class="btn btn-danger">Delete Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>GentsAcademy</h4>
+                    <p>Free, quality education for Liberia's future leaders.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 GentsAcademy. Built with 💙 for Liberia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jsPDF for professional certificate PDFs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/certificate.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

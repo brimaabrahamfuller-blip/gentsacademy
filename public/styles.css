@@ -217,3 +217,37 @@ html[data-device="mobile"] .lesson-video iframe { min-height: 210px; }
 .assessment-card input[type="radio"] { margin-right: .45rem; accent-color: var(--gold-light); }
 .form-help { color: var(--text-secondary); font-size: .9rem; line-height: 1.55; }
 @media (max-width: 700px) { .dashboard-profile { align-items: flex-start; flex-direction: column; } .assessment-card { padding: .85rem; } }
+
+/* Phase 2 interactive weekly lesson panels */
+.lesson-panel { margin: 1rem 0; border: 1px solid var(--border-color); border-radius: var(--radius-lg); background: linear-gradient(145deg, rgba(18,18,26,.98), rgba(13,27,75,.2)); overflow: hidden; }
+.lesson-panel.is-complete { border-color: rgba(84,182,137,.65); }
+.lesson-panel-topline { display: flex; align-items: center; flex-wrap: wrap; gap: .65rem; padding: .85rem 1rem .35rem; }
+.lesson-status { margin-left: auto; color: var(--text-muted); font-size: .78rem; }
+.lesson-panel.is-complete .lesson-status { color: #9de0bb; }
+.lesson-panel-main > summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .75rem 1rem 1rem; cursor: pointer; list-style: none; }
+.lesson-panel-main > summary::-webkit-details-marker { display: none; }
+.lesson-panel-main > summary > span:first-child { display: grid; gap: .3rem; }
+.lesson-panel-main > summary strong { color: var(--text-primary); font-size: 1.12rem; }
+.lesson-panel-main > summary small { color: var(--text-secondary); font-size: .88rem; font-weight: 400; }
+.panel-toggle { color: var(--gold-light); font-size: .8rem; font-weight: 700; white-space: nowrap; }
+.lesson-panel-main[open] .panel-toggle { color: var(--text-secondary); }
+.lesson-panel-content { padding: 0 1rem 1.2rem; border-top: 1px solid var(--border-color); }
+.lesson-intro { padding: 1.2rem 0; }
+.lesson-intro h3 { font-size: 1.65rem; margin: .2rem 0 .65rem; }
+.lesson-panel-grid, .lesson-resource-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 1rem; margin-top: 1rem; }
+.lesson-reading, .lesson-steps, .lesson-exercise, .lesson-checks, .lesson-materials { padding: 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: rgba(0,0,0,.12); }
+.lesson-reading h4, .lesson-steps h4, .lesson-exercise h4, .lesson-checks h4, .lesson-materials h4 { margin: .2rem 0 .6rem; color: var(--text-primary); }
+.lesson-reading p, .lesson-exercise p, .lesson-materials p { font-size: .9rem; }
+.lesson-steps ol { counter-reset: study-step; }
+.lesson-steps li { counter-increment: study-step; padding-left: 2.2rem; }
+.lesson-steps li::before { content: counter(study-step); width: 1.45rem; height: 1.45rem; display: grid; place-items: center; border-radius: 50%; background: rgba(201,168,76,.15); color: var(--gold-light); }
+.lesson-video { display: grid; grid-template-columns: .8fr 1.2fr; gap: 1rem; align-items: stretch; margin-top: 1rem; padding: 1rem; border: 1px solid rgba(201,168,76,.3); border-radius: var(--radius-md); background: rgba(13,27,75,.32); }
+.lesson-video iframe { width: 100%; min-height: 250px; border: 0; border-radius: var(--radius-md); background: #050509; }
+.lesson-actions { display: flex; align-items: center; flex-wrap: wrap; gap: .8rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color); }
+.video-fallback { display: grid; place-items: center; min-height: 200px; padding: 1rem; text-align: center; border-radius: var(--radius-md); background: rgba(0,0,0,.2); }
+@media (max-width: 760px) { .lesson-panel-grid, .lesson-resource-grid, .lesson-video { grid-template-columns: 1fr; } .lesson-status { width: 100%; margin-left: 0; } .lesson-panel-main > summary { align-items: flex-start; flex-direction: column; } .lesson-video iframe { min-height: 210px; } }
+
+.assessment-feedback { margin-top: 1rem; padding: .9rem 1rem; border-left: 3px solid var(--red); border-radius: 0 var(--radius-md) var(--radius-md) 0; background: rgba(231,111,81,.09); }
+.assessment-feedback.is-success { border-left-color: var(--green); background: rgba(84,182,137,.09); }
+.assessment-feedback strong { color: var(--text-primary); }
+.assessment-feedback p { margin: .35rem 0 0; font-size: .9rem; }

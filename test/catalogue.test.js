@@ -36,14 +36,18 @@ test('every course uses an original Liberian-youth image and a department-owned 
   }
 });
 
-test('every calendar week has a downloadable guide, attributed academic resource, video source, and study connection', () => {
+test('every calendar week has a downloadable guide, self-study support, and complete attributed reading and video source records', () => {
   for (const course of courses) {
     const lessons = materialsForCourse(course);
     assert.equal(lessons.length, course.durationWeeks);
     for (const lesson of lessons) {
       assert.ok(lesson.pdfPath.endsWith('.pdf'));
-      assert.ok(lesson.reading.provider && lesson.reading.url && lesson.reading.studyConnection);
-      assert.ok(lesson.video.provider && lesson.video.url && lesson.video.studyConnection);
+      assert.ok(lesson.selfStudyExplanation && lesson.essentialQuestion);
+      assert.equal(lesson.learningSteps.length, 3);
+      for (const resource of [lesson.reading, lesson.video]) {
+        assert.ok(resource.provider && resource.kind && resource.license && resource.officialUrl && resource.studyConnection);
+        assert.match(resource.officialUrl, /^https:\/\//);
+      }
       assert.match(lesson.studyConnection, new RegExp(course.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
     }
   }

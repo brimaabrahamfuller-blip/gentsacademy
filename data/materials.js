@@ -103,6 +103,15 @@ const rangeWeeks = (range) => {
 
 const courseConnection = (course, stage, outcome) => `Apply this resource to ${course.title}: ${stage}. Use it to deepen the week’s target outcome, “${outcome}”`;
 const resourceFor = (library, lessonIndex) => library[lessonIndex % library.length];
+const withSourceMetadata = (resource, fallbackKind, fallbackLicense) => ({
+  ...resource,
+  kind: resource.kind || fallbackKind,
+  license: resource.license || fallbackLicense,
+  officialUrl: resource.officialUrl || resource.url
+});
+const lowerFirst = (value) => String(value || '').replace(/^./, (letter) => letter.toLowerCase());
+const selfStudyExplanation = (course, stage, outcome) => `In plain language, this lesson helps you work on ${lowerFirst(outcome)}. Treat ${stage.toLowerCase()} as a skill you can build in small steps: study one idea, compare it with a real Liberian or regional example, and save a short piece of evidence of what you understood.`;
+const essentialQuestion = (course, stage) => `How could ${stage.toLowerCase()} improve a real situation connected to ${course.title}?`;
 
 const materialsForCourse = (course) => {
   const track = trackFor(course.primaryDepartment);
@@ -124,8 +133,15 @@ const materialsForCourse = (course) => {
         focus: outcome,
         activity: module.activity,
         studyConnection: courseConnection(course, stage, outcome),
-        reading: { ...reading, studyConnection: `Read selectively for this week’s ${stage.toLowerCase()} work.` },
-        video: { ...video, studyConnection: `Watch with the ${course.title} learning outcome in mind; take notes on an idea to test locally.` },
+        selfStudyExplanation: selfStudyExplanation(course, stage, outcome),
+        essentialQuestion: essentialQuestion(course, stage),
+        learningSteps: [
+          `Read for the main idea: ${outcome}`,
+          `Watch for one method or example connected to ${stage.toLowerCase()}.`,
+          `Apply the idea locally and save ${course.evidenceType.toLowerCase()}.`
+        ],
+        reading: { ...withSourceMetadata(reading, 'Academic learning resource', 'Access terms apply; verify the source page.'), studyConnection: `Read selectively for this week’s ${stage.toLowerCase()} work.` },
+        video: { ...withSourceMetadata(video, 'University lecture or official educational video', 'Access terms apply; video remains the property of its provider and platform.'), studyConnection: `Watch with the ${course.title} learning outcome in mind; take notes on an idea to test locally.` },
         pdfPath: `/materials/${course.id}/week-${week}.pdf`,
         pdfTitle: `${course.code} Week ${week} Study Guide`,
         estimatedHours: Math.max(2, Math.round(course.estimatedHours / course.durationWeeks)),

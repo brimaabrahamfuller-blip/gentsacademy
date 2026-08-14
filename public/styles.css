@@ -179,3 +179,31 @@ p { color: var(--text-secondary); }
 html[data-device="mobile"] .lesson-video iframe { min-height: 210px; }
 @media (max-width: 960px) { .lesson-video { grid-template-columns: 1fr; } }
 @media (max-width: 680px) { .lesson-columns { grid-template-columns: 1fr; } .lesson-card { padding: 1rem; } .lesson-video iframe { min-height: 200px; } }
+
+
+/* Self-study practice laboratories */
+.practice-page .section-heading { max-width: 880px; }
+.practice-workspace { display: block; margin-top: 1.5rem; }
+.practice-grid { display: grid; gap: 1rem; }
+.practice-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.practice-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.practice-workspace .card { height: 100%; }
+.practice-workspace label { display: block; margin: .75rem 0 .4rem; font-weight: 700; color: var(--text-primary); }
+.practice-workspace label:first-child { margin-top: 0; }
+.code-field { font-family: "Noto Sans Mono", "DejaVu Sans Mono", monospace; font-size: .84rem; line-height: 1.5; tab-size: 2; }
+.practice-preview { margin-top: 1rem; padding: 1rem; border-radius: 16px; background: #eef5ff; border: 1px solid rgba(11, 92, 173, .14); }
+.practice-preview iframe { width: 100%; min-height: 320px; border: 0; border-radius: 12px; background: white; }
+.practice-preview .card-topline { align-items: center; margin-bottom: .8rem; }
+.practice-preview .card-topline h3 { margin: 0; }
+.practice-output { margin-top: 1rem; padding: .9rem 1rem; border-radius: 10px; background: var(--bg-tertiary); color: var(--text-primary); font-size: .92rem; line-height: 1.55; }
+.practice-actions { display: flex; flex-wrap: wrap; gap: .65rem; align-items: center; margin-top: 1rem; }
+.practice-status { color: var(--text-secondary); font-size: .85rem; }
+.practice-link { display: inline-flex; margin-top: .7rem; }
+.source-note { color: var(--text-muted); font-size: .78rem; line-height: 1.45; }
+.video-fallback { display: grid; place-items: center; min-height: 150px; padding: 1rem; border-radius: 12px; background: rgba(255,255,255,.06); text-align: center; }
+.video-fallback .icon-badge { margin: 0 auto .5rem; }
+.rubric-list { display: grid; gap: .6rem; margin-top: .8rem; padding: .8rem; border-radius: 10px; background: var(--bg-tertiary); }
+.rubric-list label { display: flex; gap: .5rem; align-items: flex-start; margin: 0; font-size: .88rem; font-weight: 500; }
+.rubric-list input { margin-top: .2rem; accent-color: var(--gold); }
+@media (max-width: 900px) { .practice-grid-3 { grid-template-columns: 1fr; } }
+@media (max-width: 680px) { .practice-grid-2 { grid-template-columns: 1fr; } .practice-actions { align-items: stretch; } .practice-actions .button { width: 100%; } .practice-status { width: 100%; } .practice-preview iframe { min-height: 260px; } }

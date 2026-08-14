@@ -43,6 +43,10 @@ test('every calendar week has a downloadable guide, self-study support, and comp
     for (const lesson of lessons) {
       assert.ok(lesson.pdfPath.endsWith('.pdf'));
       assert.ok(lesson.selfStudyExplanation && lesson.essentialQuestion);
+      assert.ok(lesson.notes.overview && lesson.notes.explanation && lesson.notes.exercise);
+      assert.equal(lesson.notes.keyIdeas.length, 3);
+      assert.equal(lesson.notes.instructions.length, 4);
+      assert.equal(lesson.notes.checks.length, 3);
       assert.equal(lesson.learningSteps.length, 3);
       for (const resource of [lesson.reading, lesson.video]) {
         assert.ok(resource.provider && resource.kind && resource.license && resource.officialUrl && resource.studyConnection);

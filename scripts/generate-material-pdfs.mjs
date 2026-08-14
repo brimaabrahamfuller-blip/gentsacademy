@@ -102,6 +102,20 @@ ${infoBlock('Start here · in plain language', `#text(size: 10.3pt)[${escapeTyps
 #v(10pt)
 ${infoBlock('Essential question', `#text(size: 10.5pt, weight: "bold", fill: rgb("0f1b2d"))[${escapeTypst(lesson.essentialQuestion)}]#linebreak()#text(size: 8.5pt, fill: rgb("536273"))[Write one sentence before you begin. Revisit it after you apply the activity.]`, 'f6f1df', '8a6615')}
 
+#v(10pt)
+#text(size: 15pt, weight: "bold", fill: rgb("0f1b2d"))[Detailed lesson notes]
+${infoBlock('Concept note', `#text(size: 9.3pt)[${escapeTypst(lesson.notes.overview)}]#v(5pt)#text(size: 9.3pt)[${escapeTypst(lesson.notes.explanation)}]`, 'eef8f2', '1d6a48')}
+#v(7pt)
+#grid(columns: (1fr, 1fr, 1fr), gutter: 7pt,
+  ${gridBlock('01 · Purpose', `#text(size: 8.3pt)[${escapeTypst(lesson.notes.keyIdeas[0])}]`, 'f4f7fb')},
+  ${gridBlock('02 · Method', `#text(size: 8.3pt)[${escapeTypst(lesson.notes.keyIdeas[1])}]`, 'f4f7fb')},
+  ${gridBlock('03 · Evidence', `#text(size: 8.3pt)[${escapeTypst(lesson.notes.keyIdeas[2])}]`, 'f4f7fb')}
+)
+#v(7pt)
+${infoBlock('Instructions · work in order', lesson.notes.instructions.map((item, index) => `#text(size: 8.8pt)[${index + 1}. ${escapeTypst(item)}]#linebreak()`).join(''), 'f4edf9', '704b9f')}
+#v(7pt)
+${infoBlock('Weekly exercise', `#text(size: 9.2pt)[${escapeTypst(lesson.notes.exercise)}]`, 'f6f1df', '8a6615')}
+
 #pagebreak(weak: true)
 #text(size: 15pt, weight: "bold", fill: rgb("0f1b2d"))[Learn from trusted sources]
 #text(size: 9pt, fill: rgb("536273"))[These materials extend this original GentsAcademy guide. They remain owned by the named providers. Read or watch using the source’s own access and licence terms.]
@@ -119,7 +133,7 @@ ${sourceRecord(lesson.video, 'University or professor video', lesson.video.study
 )
 
 #v(8pt)
-${infoBlock('Self-check · before you finish', `#text(size: 9.2pt)[1. Can I explain this week’s idea in my own words?#linebreak()2. What example from Liberia, my community, or a regional service could I connect to it?#linebreak()3. What is one next action I can test or improve?]`, 'f4edf9', '704b9f')}
+${infoBlock('Self-check · before you finish', `#text(size: 9.2pt)[${lesson.notes.checks.map((item, index) => `${index + 1}. ${escapeTypst(item)}#linebreak()`).join('')}4. What is one next action I can test or improve?]`, 'f4edf9', '704b9f')}
 
 #v(8pt)
 ${infoBlock('Reflect and connect', `#text(size: 9.3pt)[In 3–5 sentences, explain how this week’s concept could improve a real organisation, community service, workplace, or learner project. Identify one assumption, one risk, and one action you would test next.]#v(12pt)#line(length: 100%, stroke: .5pt + rgb("9a9ab0"))#v(9pt)#line(length: 100%, stroke: .5pt + rgb("9a9ab0"))#v(9pt)#line(length: 100%, stroke: .5pt + rgb("9a9ab0"))`, 'eef8f2', '1d6a48')}

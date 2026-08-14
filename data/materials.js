@@ -112,6 +112,38 @@ const withSourceMetadata = (resource, fallbackKind, fallbackLicense) => ({
 const lowerFirst = (value) => String(value || '').replace(/^./, (letter) => letter.toLowerCase());
 const selfStudyExplanation = (course, stage, outcome) => `In plain language, this lesson helps you work on ${lowerFirst(outcome)}. Treat ${stage.toLowerCase()} as a skill you can build in small steps: study one idea, compare it with a real Liberian or regional example, and save a short piece of evidence of what you understood.`;
 const essentialQuestion = (course, stage) => `How could ${stage.toLowerCase()} improve a real situation connected to ${course.title}?`;
+const noteThemes = {
+  business: { lens: 'value, evidence, and responsible decisions', example: 'a small enterprise, service, or community opportunity', action: 'state the problem, identify who is affected, test an assumption, and record what happened' },
+  technology: { lens: 'clear requirements, repeatable workflow, testing, and safe implementation', example: 'a workplace or service process that could be improved with a digital tool', action: 'define the user, build a small version, test it with safe sample data, and document the result' },
+  hospitality: { lens: 'guest needs, service sequence, quality, safety, and teamwork', example: 'a hotel, restaurant, event, or guest-service situation', action: 'observe the service, map the hand-offs, propose one improvement, and explain how quality will be checked' },
+  tourism: { lens: 'visitor experience, local context, communication, community benefit, and sustainability', example: 'a local destination, tour, attraction, or travel experience', action: 'listen to different stakeholders, describe the experience, identify a responsible improvement, and set a simple measure' },
+  interdisciplinary: { lens: 'shared problems, collaboration, responsible delivery, and evidence', example: 'a service-sector problem that needs more than one department', action: 'frame the shared problem, assign perspectives, combine methods, and review the result with others' },
+  core: { lens: 'professional communication, digital confidence, employability, and personal progress', example: 'a realistic school, workplace, or community task', action: 'clarify the task, choose a useful tool, complete a small draft, and ask for focused feedback' }
+};
+const deepNotes = (course, track, stage, outcome) => {
+  const theme = noteThemes[track];
+  return {
+    overview: `This original lecture note places “${outcome}” inside the wider work of ${course.title}. The week is not only about remembering a definition. It is about understanding the choices behind the work: ${theme.lens}. Begin with ${theme.example}, then use the linked academic source to compare your first idea with a more formal explanation.`,
+    explanation: `A useful way to learn this topic is to move from a situation to a decision and then to evidence. First describe what is happening and who needs a better result. Next identify the information, people, tools, or constraints that shape the decision. Finally make a small, responsible attempt and explain what you would improve. This sequence keeps self-study practical and prevents a learner from copying a solution without understanding the reason for it.`,
+    keyIdeas: [
+      `Purpose: connect ${stage.toLowerCase()} to the outcome “${outcome}”.`,
+      `Method: ${theme.action}.`,
+      `Evidence: save a short record that another learner could understand and review.`
+    ],
+    instructions: [
+      'Read the guide and linked source for the main concept; write down two unfamiliar terms.',
+      'Describe a local or regional example without including private or identifying information.',
+      'Complete the weekly exercise using safe sample data, a fictional scenario, or your own non-sensitive work.',
+      'Review your result against the self-check questions and record one improvement for the next session.'
+    ],
+    exercise: `Exercise: ${course.title} learners should ${theme.action}. Use the week’s focus as your test case and save ${course.evidenceType.toLowerCase()}.`,
+    checks: [
+      `What is the main idea in your own words?`,
+      `Which decision or assumption most affects the result?`,
+      `What evidence would show that your approach is useful and responsible?`
+    ]
+  };
+};
 
 const materialsForCourse = (course) => {
   const track = trackFor(course.primaryDepartment);
@@ -140,6 +172,7 @@ const materialsForCourse = (course) => {
           `Watch for one method or example connected to ${stage.toLowerCase()}.`,
           `Apply the idea locally and save ${course.evidenceType.toLowerCase()}.`
         ],
+        notes: deepNotes(course, track, stage, outcome),
         reading: { ...withSourceMetadata(reading, 'Academic learning resource', 'Access terms apply; verify the source page.'), studyConnection: `Read selectively for this week’s ${stage.toLowerCase()} work.` },
         video: { ...withSourceMetadata(video, 'University lecture or official educational video', 'Access terms apply; video remains the property of its provider and platform.'), studyConnection: `Watch with the ${course.title} learning outcome in mind; take notes on an idea to test locally.` },
         pdfPath: `/materials/${course.id}/week-${week}.pdf`,

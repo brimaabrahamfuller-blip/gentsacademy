@@ -1,0 +1,17 @@
+[build]
+  publish = "public"
+
+# The frontend stays on Netlify while the JavaScript API and PostgreSQL-backed
+# learner services run on Render.
+[[redirects]]
+  from = "/api/*"
+  to = "https://gentsacademy.onrender.com/api/:splat"
+  status = 200
+  force = true
+
+# Hash navigation is used by the single-page app, but this fallback also keeps
+# direct browser requests to future clean routes from returning a Netlify 404.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

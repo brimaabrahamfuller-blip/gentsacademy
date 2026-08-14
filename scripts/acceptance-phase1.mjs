@@ -1,0 +1,15 @@
+const base = process.env.BASE_URL || 'http://127.0.0.1:11000';
+const email = `phase1-${Date.now()}@example.com`;
+let cookie = '';
+const request = async (path, options = {}) => { const response = await fetch(`${base}${path}`, { ...options, headers: { 'Content-Type': 'application/json', ...(options.headers || {}), ...(cookie ? { cookie } : {}) } }); const setCookie = response.headers.get('set-cookie'); if (setCookie) cookie = setCookie.split(';')[0]; const body = await response.json().catch(() => ({})); return { status: response.status, body }; };
+const assert = (condition, message) => { if (!condition) throw new Error(message); };
+const unauth = await request('/api/learners/me'); assert(unauth.status === 401, 'protected dashboard must require authentication');
+const signup = await request('/api/auth/signup', { method: 'POST', body: JSON.stringify({ displayName: 'Acceptance Learner', email, password: 'a-long-test-passphrase' }) }); assert(signup.status === 201 && signup.body.verificationUrl, 'signup must return a development verification link');
+const verify = await request(signup.body.verificationUrl); assert(verify.status === 200 && verify.body.verified, 'verification must activate the account');
+const login = await request('/api/auth/login', { method: 'POST', body: JSON.stringify({ email, password: 'a-long-test-passphrase' }) }); assert(login.status === 200 && login.body.user.email === email, 'login must return the verified user and session cookie');
+const me = await request('/api/auth/me'); assert(me.status === 200 && me.body.user.email === email, 'session must resolve the current user');
+const enrol = await request('/api/enrollments', { method: 'POST', body: JSON.stringify({ courseId: 'tec-002', departmentId: 'technology' }) }); assert(enrol.status === 201, 'authenticated learner must be able to enrol');
+const locked = await request('/api/assessments/attempts', { method: 'POST', body: JSON.stringify({ courseId: 'tec-002', week: 2, answers: { answer: 'wrong', shortAnswer: 'A short answer that is long enough to pass the field.', applied: 'A practical evidence note that is long enough for the field.' } }) }); assert(locked.status === 423, 'week two must remain locked until week one is mastered');
+const attempt = await request('/api/assessments/attempts', { method: 'POST', body: JSON.stringify({ courseId: 'tec-002', week: 1, answers: { answer: 'Structure accessible web content.', shortAnswer: 'I will explain this idea using a local learner project example.', applied: 'I will build and test a small page, then record the observed result.' } }) }); assert(attempt.status === 201 && attempt.body.mastery, 'a complete week-one submission must demonstrate mastery');
+const mastery = await request('/api/assessments/mastery'); assert(mastery.status === 200 && mastery.body.mastery.some((row) => row.courseId === 'tec-002' && row.week === 1 && row.status === 'mastered'), 'mastery state must persist');
+console.log(JSON.stringify({ ok: true, checks: ['auth-required', 'signup', 'verification', 'login-session', 'enrolment', 'week-lock', 'mastery-attempt', 'mastery-state'] }));

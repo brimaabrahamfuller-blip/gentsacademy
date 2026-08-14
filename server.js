@@ -22,6 +22,16 @@ app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 app.use(express.json({ limit: '200kb' }));
 app.use(express.urlencoded({ extended: true }));
 
+// Render may preserve a trailing-slash variant for some API requests. Normalise
+// slashless API paths before routing so browser and direct requests behave alike.
+app.use((req, _res, next) => {
+  if (req.path.startsWith('/api') && !req.path.endsWith('/')) {
+    const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
+    req.url = `${req.path}/${query}`;
+  }
+  next();
+});
+
 const normaliseEmail = (value) => String(value || '').trim().toLowerCase();
 const safeText = (value, max = 240) => String(value || '').trim().slice(0, max);
 const findCourse = (id) => courses.find((course) => course.id === String(id).toLowerCase());

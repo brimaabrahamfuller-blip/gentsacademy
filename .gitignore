@@ -2,4 +2,7 @@ node_modules/
 .DS_Store
 *.env
 .materials-typst/
+.typst-content-manifest.json
+.typst-build-plan.json
+public/materials/**/*.verify.json
 

@@ -24,17 +24,21 @@ const link = (url, label) => `#link("${escapeTypst(url)}")[${escapeTypst(label)}
 const block = (heading, body, fill = 'f4f7fb') => `#rect(fill: rgb("${fill}"), radius: 8pt, inset: 12pt)[\n  #text(weight: "bold", fill: rgb("0f1b2d"))[${escapeTypst(heading)}]\\\n  ${body}\n]`;
 
 const lessonTypst = (course, lesson) => {
-  const readingBody = `${escapeTypst(lesson.reading.provider)} · ${escapeTypst(lesson.reading.kind)}\\\\${link(lesson.reading.url, lesson.reading.title)}\\\\#text(size: 8pt, fill: rgb("536273"))[${escapeTypst(lesson.reading.license)}]`;
-  const videoBody = `${escapeTypst(lesson.video.provider)} · ${escapeTypst(lesson.video.title)}\\\\${link(lesson.video.url, 'Open video lesson or university channel')}\\\\#text(size: 8pt, fill: rgb("536273"))[Watch alongside this week’s study guide.]`;
+  const courseImage = path.posix.join('../../public', String(course.image || '').replace(/^\//, ''));
+  const readingBody = `${escapeTypst(lesson.reading.provider)} · ${escapeTypst(lesson.reading.kind)}#linebreak()${link(lesson.reading.url, lesson.reading.title)}#linebreak()#text(size: 8pt, fill: rgb("536273"))[${escapeTypst(lesson.reading.studyConnection)} ${escapeTypst(lesson.reading.license)}]`;
+  const videoBody = `${escapeTypst(lesson.video.provider)} · ${escapeTypst(lesson.video.title)}#linebreak()${link(lesson.video.url, 'Open video lesson or university channel')}#linebreak()#text(size: 8pt, fill: rgb("536273"))[${escapeTypst(lesson.video.studyConnection)}]`;
   return `#set page(paper: "a4", margin: (top: 20mm, bottom: 18mm, left: 18mm, right: 18mm))
 #set text(font: "Noto Sans", size: 10.5pt, fill: rgb("1d2939"))
 #set par(leading: 1.15em, spacing: 0.7em)
 #show link: set text(fill: rgb("0b5cad"))
 
 #rect(fill: rgb("0f1b2d"), radius: 12pt, inset: 18pt)[
-  #text(size: 9pt, weight: "bold", fill: rgb("d6b65c"))[GENTSACADEMY · WEEKLY STUDY GUIDE]\\
-  #text(size: 22pt, weight: "bold", fill: white)[${escapeTypst(course.title)}]\\
-  #text(size: 11pt, fill: rgb("e8edf3"))[${escapeTypst(course.code)} · Week ${lesson.week} of ${course.durationWeeks} · ${escapeTypst(course.primaryDepartment)}]
+  #grid(columns: (1.5fr, 1fr), gutter: 14pt,
+    [#text(size: 9pt, weight: "bold", fill: rgb("d6b65c"))[GENTSACADEMY · WEEKLY STUDY GUIDE]\\
+    #text(size: 21pt, weight: "bold", fill: white)[${escapeTypst(course.title)}]\\
+    #text(size: 11pt, fill: rgb("e8edf3"))[${escapeTypst(course.code)} · Week ${lesson.week} of ${course.durationWeeks} · ${escapeTypst(course.primaryDepartment)}]],
+    [#image("${escapeTypst(courseImage)}", width: 100%)]
+  )
 ]
 
 #v(12pt)
@@ -50,11 +54,17 @@ const lessonTypst = (course, lesson) => {
 )
 
 #v(10pt)
+#rect(fill: rgb("eef8f2"), radius: 8pt, inset: 10pt)[
+  #text(weight: "bold", fill: rgb("0f1b2d"))[ACADEMIC STUDY CONNECTION]\\
+  ${escapeTypst(lesson.studyConnection)}
+]
+
+#v(10pt)
 #text(size: 14pt, weight: "bold", fill: rgb("0f1b2d"))[Lesson pathway]
 #grid(columns: (1fr, 1fr, 1fr), gutter: 8pt,
-  rect(fill: rgb("f4f7fb"), radius: 7pt, inset: 10pt)[#text(weight: "bold")[01 · Read]\\Build the concept using the attributed open resource below.],
-  rect(fill: rgb("f4f7fb"), radius: 7pt, inset: 10pt)[#text(weight: "bold")[02 · Watch]\\Use the linked university or professor lesson as a second explanation.],
-  rect(fill: rgb("f4f7fb"), radius: 7pt, inset: 10pt)[#text(weight: "bold")[03 · Apply]\\Create evidence from the guided activity and reflection prompt.],
+  rect(fill: rgb("f4f7fb"), radius: 7pt, inset: 10pt)[#text(weight: "bold")[01 · Read]#linebreak()Build the concept using the attributed open resource below.],
+  rect(fill: rgb("f4f7fb"), radius: 7pt, inset: 10pt)[#text(weight: "bold")[02 · Watch]#linebreak()Use the linked university or professor lesson as a second explanation.],
+  rect(fill: rgb("f4f7fb"), radius: 7pt, inset: 10pt)[#text(weight: "bold")[03 · Apply]#linebreak()Create evidence from the guided activity and reflection prompt.],
 )
 
 #v(10pt)
@@ -64,14 +74,14 @@ ${block('Open reading or reference', readingBody, 'eef5ff')}
 ${block('University or professor video', videoBody, 'f6f1df')}
 
 #v(8pt)
-${block('Guided learning activity', `${escapeTypst(lesson.activity)}\\\\#text(weight: "bold")[Evidence to save:] ${escapeTypst(course.evidenceType)}.`, 'f4f7fb')}
+${block('Guided learning activity', `${escapeTypst(lesson.activity)}#linebreak()#text(weight: "bold")[Evidence to save:] ${escapeTypst(course.evidenceType)}.`, 'f4f7fb')}
 
 #v(8pt)
 ${block('Reflect and connect', `In 3–5 sentences, explain how this week’s concept could improve a real organisation, community service, workplace, or learner project in Liberia or your local context. Identify one assumption, one risk, and one action you would test next.`, 'eef8f2')}
 
 #v(12pt)
 #rect(fill: rgb("0f1b2d"), radius: 8pt, inset: 12pt)[
-  #text(size: 8.5pt, fill: rgb("e8edf3"))[Source note: GentsAcademy has created this original study guide. External resources remain owned by their respective providers and should be used according to the licence or access terms stated on the source page.]
+  #text(size: 8.5pt, fill: rgb("e8edf3"))[Source note: GentsAcademy created this original study guide and uses an original image representing young Liberian learners. External resources remain owned by their respective providers and should be used according to the licence or access terms stated on the source page.]
 ]
 `;
 };

@@ -1,9 +1,10 @@
 const images = {
-  business: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80',
-  technology: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
-  hospitality: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80',
-  tourism: 'https://images.unsplash.com/photo-1488085061387-422e29b40080?auto=format&fit=crop&w=1200&q=80',
-  core: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80'
+  business: '/images/business-liberian-youth.jpg',
+  technology: '/images/technology-liberian-youth.jpg',
+  hospitality: '/images/hospitality-liberian-youth.jpg',
+  tourism: '/images/tourism-liberian-youth.jpg',
+  interdisciplinary: '/images/interdisciplinary-liberian-youth.jpg',
+  core: '/images/interdisciplinary-liberian-youth.jpg'
 };
 
 const departmentByCode = {
@@ -20,7 +21,7 @@ const departmentImage = {
   'IT and Technology': images.technology,
   'Hospitality Management': images.hospitality,
   'Tourism and Destination Management': images.tourism,
-  Interdisciplinary: images.technology,
+  Interdisciplinary: images.interdisciplinary,
   'GentsAcademy Core': images.core
 };
 

@@ -37,6 +37,11 @@ const normaliseEmail = (value) => String(value || '').trim().toLowerCase();
 const safeText = (value, max = 240) => String(value || '').trim().slice(0, max);
 const findCourse = (id) => courses.find((course) => course.id === String(id).toLowerCase());
 const findPathway = (id) => pathways.find((pathway) => pathway.id === String(id).toLowerCase());
+const findDepartment = (id) => departments.find((department) => department.id === String(id).toLowerCase());
+const courseInDepartment = (course, departmentId) => {
+  const department = findDepartment(departmentId);
+  return Boolean(department && course && course.primaryDepartment === department.name);
+};
 const idFor = (prefix) => `${prefix}-${crypto.randomUUID()}`;
 
 async function initialiseDatabase() {
@@ -139,6 +144,12 @@ app.get('/api/catalogue-summary', (_req, res) => {
 });
 
 app.get('/api/departments', (_req, res) => res.json({ departments }));
+app.get('/api/departments/:departmentId/courses', (req, res) => {
+  const department = findDepartment(req.params.departmentId);
+  if (!department) return res.status(404).json({ error: 'Department not found.' });
+  const departmentCourses = courses.filter((course) => course.status === 'published' && course.primaryDepartment === department.name);
+  res.json({ department, courses: departmentCourses, total: departmentCourses.length });
+});
 app.get('/api/pathways', (_req, res) => res.json({ pathways: pathways.map((pathway) => ({ ...pathway, courses: pathway.courseIds.map(findCourse).filter(Boolean) })) }));
 app.get('/api/certificate-rules', (_req, res) => res.json({ rules: certificateRules }));
 
@@ -161,14 +172,18 @@ app.get('/api/courses', (req, res) => {
 
 app.get('/api/courses/:id/materials', (req, res) => {
   const course = findCourse(req.params.id);
+  const departmentId = safeText(req.query.departmentId, 80);
   if (!course) return res.status(404).json({ error: 'Course not found.' });
+  if (!courseInDepartment(course, departmentId)) return res.status(403).json({ error: 'Open this course from its owning academic department.' });
   res.json({ courseId: course.id, courseTitle: course.title, weeklyLessons: materialsForCourse(course) });
 });
 
 app.get('/api/courses/:id', (req, res) => {
   const course = findCourse(req.params.id);
+  const departmentId = safeText(req.query.departmentId, 80);
   if (!course) return res.status(404).json({ error: 'Course not found.' });
-  const related = courses.filter((item) => item.id !== course.id && (item.primaryDepartment === course.primaryDepartment || item.tags.some((tag) => course.tags.includes(tag)))).slice(0, 4);
+  if (!courseInDepartment(course, departmentId)) return res.status(403).json({ error: 'Open this course from its owning academic department.' });
+  const related = courses.filter((item) => item.id !== course.id && item.primaryDepartment === course.primaryDepartment && item.status === 'published').slice(0, 4);
   res.json({ course, related, weeklyLessons: materialsForCourse(course) });
 });
 
@@ -176,7 +191,10 @@ app.post('/api/enrollments', async (req, res) => {
   const learnerName = safeText(req.body.learnerName, 100);
   const email = normaliseEmail(req.body.email);
   const courseId = safeText(req.body.courseId, 40).toLowerCase();
-  if (!learnerName || !email || !email.includes('@') || !findCourse(courseId)) return res.status(400).json({ error: 'Provide a name, valid email, and published course.' });
+  const departmentId = safeText(req.body.departmentId, 80);
+  const course = findCourse(courseId);
+  if (!learnerName || !email || !email.includes('@') || !course || course.status !== 'published') return res.status(400).json({ error: 'Provide a name, valid email, and published course.' });
+  if (!courseInDepartment(course, departmentId)) return res.status(403).json({ error: 'Enrol from the academic department that owns this course.' });
   try {
     const enrollment = await saveEnrollment({ learnerName, email, courseId });
     res.status(201).json({ enrollment, message: 'Enrollment recorded. Your learning dashboard is ready.' });

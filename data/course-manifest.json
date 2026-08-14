@@ -1,0 +1,1890 @@
+[
+  {
+    "sequence": 1,
+    "id": "bus-001",
+    "code": "BUS-001",
+    "title": "Fundamentals of Business and Entrepreneurship",
+    "department": "Business and Entrepreneurship",
+    "level": "Beginner",
+    "durationWeeks": 12,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Opportunity and local context",
+        "activity": "Complete a guided opportunity and local context activity using a Liberian or regional case study.",
+        "estimatedHours": 12
+      },
+      {
+        "week": "4–6",
+        "title": "Tools, frameworks, and decision-making",
+        "activity": "Complete a guided tools, frameworks, and decision-making activity using a Liberian or regional case study.",
+        "estimatedHours": 12
+      },
+      {
+        "week": "7–9",
+        "title": "Applied workplace practice",
+        "activity": "Complete a guided applied workplace practice activity using a Liberian or regional case study.",
+        "estimatedHours": 12
+      },
+      {
+        "week": "10–12",
+        "title": "Portfolio capstone and presentation",
+        "activity": "Submit and present the Fundamentals of Business and Entrepreneurship capstone evidence.",
+        "estimatedHours": 12
+      }
+    ],
+    "outcomes": [
+      "Analyse a local opportunity and target customer.",
+      "Create a practical business model and operating plan.",
+      "Prepare a simple budget and risk register.",
+      "Present a venture plan for feedback."
+    ],
+    "tags": [
+      "entrepreneurship",
+      "business planning",
+      "local enterprise"
+    ]
+  },
+  {
+    "sequence": 2,
+    "id": "bus-002",
+    "code": "BUS-002",
+    "title": "Digital Marketing and Social Media Strategy",
+    "department": "Business and Entrepreneurship",
+    "level": "Intermediate",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Opportunity and local context",
+        "activity": "Complete a guided opportunity and local context activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Tools, frameworks, and decision-making",
+        "activity": "Complete a guided tools, frameworks, and decision-making activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Applied workplace practice",
+        "activity": "Complete a guided applied workplace practice activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Portfolio capstone and presentation",
+        "activity": "Submit and present the Digital Marketing and Social Media Strategy capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Define an audience and campaign objective.",
+      "Create a channel plan and content calendar.",
+      "Produce accessible campaign content.",
+      "Evaluate reach, engagement, and conversion evidence."
+    ],
+    "tags": [
+      "marketing",
+      "social media",
+      "content strategy"
+    ]
+  },
+  {
+    "sequence": 3,
+    "id": "bus-003",
+    "code": "BUS-003",
+    "title": "Financial Literacy and Personal Wealth Building",
+    "department": "Business and Entrepreneurship",
+    "level": "Beginner",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Opportunity and local context",
+        "activity": "Complete a guided opportunity and local context activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Tools, frameworks, and decision-making",
+        "activity": "Complete a guided tools, frameworks, and decision-making activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Applied workplace practice",
+        "activity": "Complete a guided applied workplace practice activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Portfolio capstone and presentation",
+        "activity": "Submit and present the Financial Literacy and Personal Wealth Building capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Create a personal and small-enterprise budget.",
+      "Build a cash-flow plan from realistic assumptions.",
+      "Compare financial risks and choices.",
+      "Present a responsible financial action plan."
+    ],
+    "tags": [
+      "finance",
+      "budgeting",
+      "personal planning"
+    ]
+  },
+  {
+    "sequence": 4,
+    "id": "bus-004",
+    "code": "BUS-004",
+    "title": "Sales Mastery and Closing Techniques",
+    "department": "Business and Entrepreneurship",
+    "level": "Intermediate",
+    "durationWeeks": 8,
+    "modules": [
+      {
+        "week": "1–2",
+        "title": "Opportunity and local context",
+        "activity": "Complete a guided opportunity and local context activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "3–4",
+        "title": "Tools, frameworks, and decision-making",
+        "activity": "Complete a guided tools, frameworks, and decision-making activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "5–6",
+        "title": "Applied workplace practice",
+        "activity": "Complete a guided applied workplace practice activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "7–8",
+        "title": "Portfolio capstone and presentation",
+        "activity": "Submit and present the Sales Mastery and Closing Techniques capstone evidence.",
+        "estimatedHours": 8
+      }
+    ],
+    "outcomes": [
+      "Use customer discovery questions effectively.",
+      "Write an ethical value proposition and sales script.",
+      "Handle objections through evidence and empathy.",
+      "Maintain a simple sales pipeline."
+    ],
+    "tags": [
+      "sales",
+      "customer discovery",
+      "negotiation"
+    ]
+  },
+  {
+    "sequence": 5,
+    "id": "bus-005",
+    "code": "BUS-005",
+    "title": "Entrepreneurship and Startup Acceleration",
+    "department": "Business and Entrepreneurship",
+    "level": "Advanced",
+    "durationWeeks": 12,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Opportunity and local context",
+        "activity": "Complete a guided opportunity and local context activity using a Liberian or regional case study.",
+        "estimatedHours": 12
+      },
+      {
+        "week": "4–6",
+        "title": "Tools, frameworks, and decision-making",
+        "activity": "Complete a guided tools, frameworks, and decision-making activity using a Liberian or regional case study.",
+        "estimatedHours": 12
+      },
+      {
+        "week": "7–9",
+        "title": "Applied workplace practice",
+        "activity": "Complete a guided applied workplace practice activity using a Liberian or regional case study.",
+        "estimatedHours": 12
+      },
+      {
+        "week": "10–12",
+        "title": "Portfolio capstone and presentation",
+        "activity": "Submit and present the Entrepreneurship and Startup Acceleration capstone evidence.",
+        "estimatedHours": 12
+      }
+    ],
+    "outcomes": [
+      "Validate a problem with customer evidence.",
+      "Design a sustainable revenue model.",
+      "Build a minimum viable offer.",
+      "Present an investor-style pitch with milestones."
+    ],
+    "tags": [
+      "startups",
+      "validation",
+      "pitching"
+    ]
+  },
+  {
+    "sequence": 6,
+    "id": "bus-006",
+    "code": "BUS-006",
+    "title": "Small Business Accounting and Bookkeeping",
+    "department": "Business and Entrepreneurship",
+    "level": "Beginner",
+    "durationWeeks": 8,
+    "modules": [
+      {
+        "week": "1–2",
+        "title": "Opportunity and local context",
+        "activity": "Complete a guided opportunity and local context activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "3–4",
+        "title": "Tools, frameworks, and decision-making",
+        "activity": "Complete a guided tools, frameworks, and decision-making activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "5–6",
+        "title": "Applied workplace practice",
+        "activity": "Complete a guided applied workplace practice activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "7–8",
+        "title": "Portfolio capstone and presentation",
+        "activity": "Submit and present the Small Business Accounting and Bookkeeping capstone evidence.",
+        "estimatedHours": 8
+      }
+    ],
+    "outcomes": [
+      "Set up a clear chart of accounts.",
+      "Record common transactions accurately.",
+      "Reconcile a basic cashbook.",
+      "Prepare a monthly performance report."
+    ],
+    "tags": [
+      "bookkeeping",
+      "accounting",
+      "small business"
+    ]
+  },
+  {
+    "sequence": 7,
+    "id": "bus-007",
+    "code": "BUS-007",
+    "title": "Business Operations, Procurement, and Inventory",
+    "department": "Business and Entrepreneurship",
+    "level": "Intermediate",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Opportunity and local context",
+        "activity": "Complete a guided opportunity and local context activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Tools, frameworks, and decision-making",
+        "activity": "Complete a guided tools, frameworks, and decision-making activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Applied workplace practice",
+        "activity": "Complete a guided applied workplace practice activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Portfolio capstone and presentation",
+        "activity": "Submit and present the Business Operations, Procurement, and Inventory capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Map an operating process and identify waste.",
+      "Design a procurement checklist.",
+      "Build an inventory control routine.",
+      "Report an operational improvement recommendation."
+    ],
+    "tags": [
+      "operations",
+      "procurement",
+      "inventory"
+    ]
+  },
+  {
+    "sequence": 8,
+    "id": "bus-008",
+    "code": "BUS-008",
+    "title": "Business in Hospitality: Revenue and Operations Management",
+    "department": "Business and Entrepreneurship",
+    "level": "Advanced",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Opportunity and local context",
+        "activity": "Complete a guided opportunity and local context activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Tools, frameworks, and decision-making",
+        "activity": "Complete a guided tools, frameworks, and decision-making activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Applied workplace practice",
+        "activity": "Complete a guided applied workplace practice activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Portfolio capstone and presentation",
+        "activity": "Submit and present the Business in Hospitality: Revenue and Operations Management capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Interpret basic hospitality revenue and cost data.",
+      "Recommend pricing and staffing actions.",
+      "Connect procurement choices to service quality.",
+      "Present a measurable performance improvement plan."
+    ],
+    "tags": [
+      "hospitality revenue",
+      "pricing",
+      "operations"
+    ]
+  },
+  {
+    "sequence": 9,
+    "id": "tec-001",
+    "code": "TEC-001",
+    "title": "Digital Literacy and Productivity Tools",
+    "department": "IT and Technology",
+    "level": "Beginner",
+    "durationWeeks": 6,
+    "modules": [
+      {
+        "week": "1–2",
+        "title": "Foundations and digital workflow",
+        "activity": "Complete a guided foundations and digital workflow activity using a Liberian or regional case study.",
+        "estimatedHours": 6
+      },
+      {
+        "week": "3–3",
+        "title": "Build, configure, or analyse",
+        "activity": "Complete a guided build, configure, or analyse activity using a Liberian or regional case study.",
+        "estimatedHours": 6
+      },
+      {
+        "week": "4–5",
+        "title": "Responsible implementation and testing",
+        "activity": "Complete a guided responsible implementation and testing activity using a Liberian or regional case study.",
+        "estimatedHours": 6
+      },
+      {
+        "week": "6–6",
+        "title": "Portfolio capstone and review",
+        "activity": "Submit and present the Digital Literacy and Productivity Tools capstone evidence.",
+        "estimatedHours": 6
+      }
+    ],
+    "outcomes": [
+      "Create and format a professional document.",
+      "Use a spreadsheet for basic calculations.",
+      "Communicate and collaborate safely online.",
+      "Organise a personal digital portfolio."
+    ],
+    "tags": [
+      "digital literacy",
+      "productivity",
+      "workplace tools"
+    ]
+  },
+  {
+    "sequence": 10,
+    "id": "tec-002",
+    "code": "TEC-002",
+    "title": "Web Development with HTML, CSS, and JavaScript",
+    "department": "IT and Technology",
+    "level": "Beginner",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Foundations and digital workflow",
+        "activity": "Complete a guided foundations and digital workflow activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Build, configure, or analyse",
+        "activity": "Complete a guided build, configure, or analyse activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Responsible implementation and testing",
+        "activity": "Complete a guided responsible implementation and testing activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Portfolio capstone and review",
+        "activity": "Submit and present the Web Development with HTML, CSS, and JavaScript capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Structure accessible web content.",
+      "Style a responsive interface.",
+      "Add interactive behaviour with JavaScript.",
+      "Publish and test a small web project."
+    ],
+    "tags": [
+      "web development",
+      "javascript",
+      "frontend"
+    ]
+  },
+  {
+    "sequence": 11,
+    "id": "tec-003",
+    "code": "TEC-003",
+    "title": "Mobile App Development with React Native",
+    "department": "IT and Technology",
+    "level": "Intermediate",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Foundations and digital workflow",
+        "activity": "Complete a guided foundations and digital workflow activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Build, configure, or analyse",
+        "activity": "Complete a guided build, configure, or analyse activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Responsible implementation and testing",
+        "activity": "Complete a guided responsible implementation and testing activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Portfolio capstone and review",
+        "activity": "Submit and present the Mobile App Development with React Native capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Plan a mobile user flow.",
+      "Build reusable interface components.",
+      "Connect a screen to local or remote data.",
+      "Test a working mobile prototype."
+    ],
+    "tags": [
+      "mobile development",
+      "react native",
+      "prototyping"
+    ]
+  },
+  {
+    "sequence": 12,
+    "id": "tec-004",
+    "code": "TEC-004",
+    "title": "Data Analysis with Spreadsheets and Python",
+    "department": "IT and Technology",
+    "level": "Intermediate",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Foundations and digital workflow",
+        "activity": "Complete a guided foundations and digital workflow activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Build, configure, or analyse",
+        "activity": "Complete a guided build, configure, or analyse activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Responsible implementation and testing",
+        "activity": "Complete a guided responsible implementation and testing activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Portfolio capstone and review",
+        "activity": "Submit and present the Data Analysis with Spreadsheets and Python capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Prepare a clean analysis dataset.",
+      "Use formulas or Python for analysis.",
+      "Choose an appropriate chart or dashboard.",
+      "Explain findings and limitations responsibly."
+    ],
+    "tags": [
+      "data analysis",
+      "python",
+      "dashboards"
+    ]
+  },
+  {
+    "sequence": 13,
+    "id": "tec-005",
+    "code": "TEC-005",
+    "title": "Cloud Computing with AWS and Azure Concepts",
+    "department": "IT and Technology",
+    "level": "Intermediate",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Foundations and digital workflow",
+        "activity": "Complete a guided foundations and digital workflow activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Build, configure, or analyse",
+        "activity": "Complete a guided build, configure, or analyse activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Responsible implementation and testing",
+        "activity": "Complete a guided responsible implementation and testing activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Portfolio capstone and review",
+        "activity": "Submit and present the Cloud Computing with AWS and Azure Concepts capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Explain common cloud service models.",
+      "Design a secure cloud architecture.",
+      "Estimate basic resource and cost needs.",
+      "Document a deployment exercise."
+    ],
+    "tags": [
+      "cloud",
+      "aws",
+      "azure",
+      "architecture"
+    ]
+  },
+  {
+    "sequence": 14,
+    "id": "tec-006",
+    "code": "TEC-006",
+    "title": "DevOps and CI/CD Mastery",
+    "department": "IT and Technology",
+    "level": "Advanced",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Foundations and digital workflow",
+        "activity": "Complete a guided foundations and digital workflow activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Build, configure, or analyse",
+        "activity": "Complete a guided build, configure, or analyse activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Responsible implementation and testing",
+        "activity": "Complete a guided responsible implementation and testing activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Portfolio capstone and review",
+        "activity": "Submit and present the DevOps and CI/CD Mastery capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Use a branching and review workflow.",
+      "Create repeatable build and test steps.",
+      "Configure a deployment pipeline.",
+      "Monitor and document release quality."
+    ],
+    "tags": [
+      "devops",
+      "ci/cd",
+      "automation"
+    ]
+  },
+  {
+    "sequence": 15,
+    "id": "tec-007",
+    "code": "TEC-007",
+    "title": "Cybersecurity Fundamentals and Ethical Hacking",
+    "department": "IT and Technology",
+    "level": "Beginner",
+    "durationWeeks": 12,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Foundations and digital workflow",
+        "activity": "Complete a guided foundations and digital workflow activity using a Liberian or regional case study.",
+        "estimatedHours": 12
+      },
+      {
+        "week": "4–6",
+        "title": "Build, configure, or analyse",
+        "activity": "Complete a guided build, configure, or analyse activity using a Liberian or regional case study.",
+        "estimatedHours": 12
+      },
+      {
+        "week": "7–9",
+        "title": "Responsible implementation and testing",
+        "activity": "Complete a guided responsible implementation and testing activity using a Liberian or regional case study.",
+        "estimatedHours": 12
+      },
+      {
+        "week": "10–12",
+        "title": "Portfolio capstone and review",
+        "activity": "Submit and present the Cybersecurity Fundamentals and Ethical Hacking capstone evidence.",
+        "estimatedHours": 12
+      }
+    ],
+    "outcomes": [
+      "Identify common security threats.",
+      "Apply basic access and device controls.",
+      "Use an authorised lab to document findings.",
+      "Create a practical security checklist."
+    ],
+    "tags": [
+      "cybersecurity",
+      "ethical hacking",
+      "risk"
+    ]
+  },
+  {
+    "sequence": 16,
+    "id": "tec-008",
+    "code": "TEC-008",
+    "title": "Introduction to Artificial Intelligence and Machine Learning",
+    "department": "IT and Technology",
+    "level": "Beginner",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Foundations and digital workflow",
+        "activity": "Complete a guided foundations and digital workflow activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Build, configure, or analyse",
+        "activity": "Complete a guided build, configure, or analyse activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Responsible implementation and testing",
+        "activity": "Complete a guided responsible implementation and testing activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Portfolio capstone and review",
+        "activity": "Submit and present the Introduction to Artificial Intelligence and Machine Learning capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Frame a practical AI use case.",
+      "Explain data, models, and evaluation at a beginner level.",
+      "Compare risks and benefits of an AI solution.",
+      "Evaluate a small prototype against clear criteria."
+    ],
+    "tags": [
+      "AI and data",
+      "machine learning",
+      "problem framing"
+    ]
+  },
+  {
+    "sequence": 17,
+    "id": "tec-009",
+    "code": "TEC-009",
+    "title": "Prompt Engineering and Responsible Generative AI",
+    "department": "IT and Technology",
+    "level": "Intermediate",
+    "durationWeeks": 8,
+    "modules": [
+      {
+        "week": "1–2",
+        "title": "Foundations and digital workflow",
+        "activity": "Complete a guided foundations and digital workflow activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "3–4",
+        "title": "Build, configure, or analyse",
+        "activity": "Complete a guided build, configure, or analyse activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "5–6",
+        "title": "Responsible implementation and testing",
+        "activity": "Complete a guided responsible implementation and testing activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "7–8",
+        "title": "Portfolio capstone and review",
+        "activity": "Submit and present the Prompt Engineering and Responsible Generative AI capstone evidence.",
+        "estimatedHours": 8
+      }
+    ],
+    "outcomes": [
+      "Design prompts for repeatable work tasks.",
+      "Evaluate outputs for accuracy and bias.",
+      "Protect personal and organisational information.",
+      "Create a responsible AI use guide."
+    ],
+    "tags": [
+      "AI and data",
+      "prompting",
+      "responsible technology"
+    ]
+  },
+  {
+    "sequence": 18,
+    "id": "tec-010",
+    "code": "TEC-010",
+    "title": "Property Management and Booking Systems",
+    "department": "IT and Technology",
+    "level": "Intermediate",
+    "durationWeeks": 8,
+    "modules": [
+      {
+        "week": "1–2",
+        "title": "Foundations and digital workflow",
+        "activity": "Complete a guided foundations and digital workflow activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "3–4",
+        "title": "Build, configure, or analyse",
+        "activity": "Complete a guided build, configure, or analyse activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "5–6",
+        "title": "Responsible implementation and testing",
+        "activity": "Complete a guided responsible implementation and testing activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "7–8",
+        "title": "Portfolio capstone and review",
+        "activity": "Submit and present the Property Management and Booking Systems capstone evidence.",
+        "estimatedHours": 8
+      }
+    ],
+    "outcomes": [
+      "Map a property or booking workflow.",
+      "Configure a small data model and roles.",
+      "Apply guest-data and access safeguards.",
+      "Produce an operational report."
+    ],
+    "tags": [
+      "PMS",
+      "booking systems",
+      "digital operations"
+    ]
+  },
+  {
+    "sequence": 19,
+    "id": "hos-001",
+    "code": "HOS-001",
+    "title": "Introduction to Hospitality and Guest Service",
+    "department": "Hospitality Management",
+    "level": "Beginner",
+    "durationWeeks": 8,
+    "modules": [
+      {
+        "week": "1–2",
+        "title": "Service standards and guest needs",
+        "activity": "Complete a guided service standards and guest needs activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "3–4",
+        "title": "Operational workflow and practice",
+        "activity": "Complete a guided operational workflow and practice activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "5–6",
+        "title": "Safety, quality, and teamwork",
+        "activity": "Complete a guided safety, quality, and teamwork activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "7–8",
+        "title": "Evidence-based service capstone",
+        "activity": "Submit and present the Introduction to Hospitality and Guest Service capstone evidence.",
+        "estimatedHours": 8
+      }
+    ],
+    "outcomes": [
+      "Explain the hospitality service cycle.",
+      "Demonstrate respectful guest communication.",
+      "Apply an inclusive service standard.",
+      "Respond to a common guest scenario."
+    ],
+    "tags": [
+      "guest service",
+      "hospitality",
+      "service standards"
+    ]
+  },
+  {
+    "sequence": 20,
+    "id": "hos-002",
+    "code": "HOS-002",
+    "title": "Front Office, Reservations, and Reception Operations",
+    "department": "Hospitality Management",
+    "level": "Beginner",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Service standards and guest needs",
+        "activity": "Complete a guided service standards and guest needs activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Operational workflow and practice",
+        "activity": "Complete a guided operational workflow and practice activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Safety, quality, and teamwork",
+        "activity": "Complete a guided safety, quality, and teamwork activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Evidence-based service capstone",
+        "activity": "Submit and present the Front Office, Reservations, and Reception Operations capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Map a reservation-to-departure workflow.",
+      "Prepare accurate guest communications.",
+      "Handle check-in, check-out, and escalation scenarios.",
+      "Use a front-office simulation safely."
+    ],
+    "tags": [
+      "front office",
+      "reservations",
+      "reception"
+    ]
+  },
+  {
+    "sequence": 21,
+    "id": "hos-003",
+    "code": "HOS-003",
+    "title": "Housekeeping Operations and Quality Standards",
+    "department": "Hospitality Management",
+    "level": "Beginner",
+    "durationWeeks": 8,
+    "modules": [
+      {
+        "week": "1–2",
+        "title": "Service standards and guest needs",
+        "activity": "Complete a guided service standards and guest needs activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "3–4",
+        "title": "Operational workflow and practice",
+        "activity": "Complete a guided operational workflow and practice activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "5–6",
+        "title": "Safety, quality, and teamwork",
+        "activity": "Complete a guided safety, quality, and teamwork activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "7–8",
+        "title": "Evidence-based service capstone",
+        "activity": "Submit and present the Housekeeping Operations and Quality Standards capstone evidence.",
+        "estimatedHours": 8
+      }
+    ],
+    "outcomes": [
+      "Sequence a room-cleaning workflow.",
+      "Apply an inspection and quality checklist.",
+      "Identify safety and inclusion considerations.",
+      "Recommend a resource-saving improvement."
+    ],
+    "tags": [
+      "housekeeping",
+      "quality",
+      "occupational safety"
+    ]
+  },
+  {
+    "sequence": 22,
+    "id": "hos-004",
+    "code": "HOS-004",
+    "title": "Food and Beverage Service Fundamentals",
+    "department": "Hospitality Management",
+    "level": "Beginner",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Service standards and guest needs",
+        "activity": "Complete a guided service standards and guest needs activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Operational workflow and practice",
+        "activity": "Complete a guided operational workflow and practice activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Safety, quality, and teamwork",
+        "activity": "Complete a guided safety, quality, and teamwork activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Evidence-based service capstone",
+        "activity": "Submit and present the Food and Beverage Service Fundamentals capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Describe a safe food and beverage service sequence.",
+      "Communicate menu information accurately.",
+      "Handle a basic service scenario professionally.",
+      "Reflect on hygiene and inclusion practice."
+    ],
+    "tags": [
+      "food and beverage",
+      "service",
+      "food safety"
+    ]
+  },
+  {
+    "sequence": 23,
+    "id": "hos-005",
+    "code": "HOS-005",
+    "title": "Hospitality Supervision and Team Leadership",
+    "department": "Hospitality Management",
+    "level": "Intermediate",
+    "durationWeeks": 8,
+    "modules": [
+      {
+        "week": "1–2",
+        "title": "Service standards and guest needs",
+        "activity": "Complete a guided service standards and guest needs activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "3–4",
+        "title": "Operational workflow and practice",
+        "activity": "Complete a guided operational workflow and practice activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "5–6",
+        "title": "Safety, quality, and teamwork",
+        "activity": "Complete a guided safety, quality, and teamwork activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "7–8",
+        "title": "Evidence-based service capstone",
+        "activity": "Submit and present the Hospitality Supervision and Team Leadership capstone evidence.",
+        "estimatedHours": 8
+      }
+    ],
+    "outcomes": [
+      "Create a realistic shift plan.",
+      "Lead an inclusive team briefing.",
+      "Give a constructive performance conversation.",
+      "Track a service improvement action."
+    ],
+    "tags": [
+      "supervision",
+      "leadership",
+      "teamwork"
+    ]
+  },
+  {
+    "sequence": 24,
+    "id": "hos-006",
+    "code": "HOS-006",
+    "title": "Events, Banqueting, and Conference Operations",
+    "department": "Hospitality Management",
+    "level": "Intermediate",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Service standards and guest needs",
+        "activity": "Complete a guided service standards and guest needs activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Operational workflow and practice",
+        "activity": "Complete a guided operational workflow and practice activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Safety, quality, and teamwork",
+        "activity": "Complete a guided safety, quality, and teamwork activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Evidence-based service capstone",
+        "activity": "Submit and present the Events, Banqueting, and Conference Operations capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Translate a brief into an event plan.",
+      "Build a working budget and run sheet.",
+      "Identify event risks and mitigations.",
+      "Present a guest-centred delivery plan."
+    ],
+    "tags": [
+      "events",
+      "banqueting",
+      "risk planning"
+    ]
+  },
+  {
+    "sequence": 25,
+    "id": "hos-007",
+    "code": "HOS-007",
+    "title": "Hospitality Sales, Service Recovery, and Guest Experience",
+    "department": "Hospitality Management",
+    "level": "Intermediate",
+    "durationWeeks": 8,
+    "modules": [
+      {
+        "week": "1–2",
+        "title": "Service standards and guest needs",
+        "activity": "Complete a guided service standards and guest needs activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "3–4",
+        "title": "Operational workflow and practice",
+        "activity": "Complete a guided operational workflow and practice activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "5–6",
+        "title": "Safety, quality, and teamwork",
+        "activity": "Complete a guided safety, quality, and teamwork activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "7–8",
+        "title": "Evidence-based service capstone",
+        "activity": "Submit and present the Hospitality Sales, Service Recovery, and Guest Experience capstone evidence.",
+        "estimatedHours": 8
+      }
+    ],
+    "outcomes": [
+      "Diagnose a guest experience breakdown.",
+      "Use a service recovery framework.",
+      "Create an ethical hospitality sales plan.",
+      "Compile evidence from guest scenarios."
+    ],
+    "tags": [
+      "service recovery",
+      "guest experience",
+      "hospitality sales"
+    ]
+  },
+  {
+    "sequence": 26,
+    "id": "hos-008",
+    "code": "HOS-008",
+    "title": "Sustainable Hotel and Restaurant Operations",
+    "department": "Hospitality Management",
+    "level": "Advanced",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Service standards and guest needs",
+        "activity": "Complete a guided service standards and guest needs activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Operational workflow and practice",
+        "activity": "Complete a guided operational workflow and practice activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Safety, quality, and teamwork",
+        "activity": "Complete a guided safety, quality, and teamwork activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Evidence-based service capstone",
+        "activity": "Submit and present the Sustainable Hotel and Restaurant Operations capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Audit key resource and operational impacts.",
+      "Recommend measurable energy, water, or waste actions.",
+      "Connect procurement to community and quality outcomes.",
+      "Present an implementation and tracking plan."
+    ],
+    "tags": [
+      "sustainability",
+      "hotel operations",
+      "responsible procurement"
+    ]
+  },
+  {
+    "sequence": 27,
+    "id": "tur-001",
+    "code": "TUR-001",
+    "title": "Introduction to Tourism and Travel Systems",
+    "department": "Tourism and Destination Management",
+    "level": "Beginner",
+    "durationWeeks": 8,
+    "modules": [
+      {
+        "week": "1–2",
+        "title": "Tourism systems and local context",
+        "activity": "Complete a guided tourism systems and local context activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "3–4",
+        "title": "Visitor experience and communication",
+        "activity": "Complete a guided visitor experience and communication activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "5–6",
+        "title": "Community, safety, and sustainability",
+        "activity": "Complete a guided community, safety, and sustainability activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "7–8",
+        "title": "Destination or tour capstone",
+        "activity": "Submit and present the Introduction to Tourism and Travel Systems capstone evidence.",
+        "estimatedHours": 8
+      }
+    ],
+    "outcomes": [
+      "Map a local tourism system.",
+      "Identify visitor and community needs.",
+      "Describe the roles of public and private actors.",
+      "Write a responsible local opportunity brief."
+    ],
+    "tags": [
+      "tourism systems",
+      "travel",
+      "local opportunity"
+    ]
+  },
+  {
+    "sequence": 28,
+    "id": "tur-002",
+    "code": "TUR-002",
+    "title": "Tour Guiding, Interpretation, and Visitor Communication",
+    "department": "Tourism and Destination Management",
+    "level": "Beginner",
+    "durationWeeks": 8,
+    "modules": [
+      {
+        "week": "1–2",
+        "title": "Tourism systems and local context",
+        "activity": "Complete a guided tourism systems and local context activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "3–4",
+        "title": "Visitor experience and communication",
+        "activity": "Complete a guided visitor experience and communication activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "5–6",
+        "title": "Community, safety, and sustainability",
+        "activity": "Complete a guided community, safety, and sustainability activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "7–8",
+        "title": "Destination or tour capstone",
+        "activity": "Submit and present the Tour Guiding, Interpretation, and Visitor Communication capstone evidence.",
+        "estimatedHours": 8
+      }
+    ],
+    "outcomes": [
+      "Research and verify a local story.",
+      "Write an inclusive tour interpretation script.",
+      "Deliver clear visitor communication.",
+      "Adapt a tour for safety and accessibility."
+    ],
+    "tags": [
+      "tour guiding",
+      "interpretation",
+      "visitor communication"
+    ]
+  },
+  {
+    "sequence": 29,
+    "id": "tur-003",
+    "code": "TUR-003",
+    "title": "Travel Agency and Tour Operations",
+    "department": "Tourism and Destination Management",
+    "level": "Intermediate",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Tourism systems and local context",
+        "activity": "Complete a guided tourism systems and local context activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Visitor experience and communication",
+        "activity": "Complete a guided visitor experience and communication activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Community, safety, and sustainability",
+        "activity": "Complete a guided community, safety, and sustainability activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Destination or tour capstone",
+        "activity": "Submit and present the Travel Agency and Tour Operations capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Build a coherent itinerary from a brief.",
+      "Prepare a quotation and booking workflow.",
+      "Assess supplier and traveller risks.",
+      "Document a professional client communication sequence."
+    ],
+    "tags": [
+      "travel agency",
+      "tour operations",
+      "booking workflow"
+    ]
+  },
+  {
+    "sequence": 30,
+    "id": "tur-004",
+    "code": "TUR-004",
+    "title": "Destination Marketing and Community-Based Tourism",
+    "department": "Tourism and Destination Management",
+    "level": "Intermediate",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Tourism systems and local context",
+        "activity": "Complete a guided tourism systems and local context activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Visitor experience and communication",
+        "activity": "Complete a guided visitor experience and communication activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Community, safety, and sustainability",
+        "activity": "Complete a guided community, safety, and sustainability activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Destination or tour capstone",
+        "activity": "Submit and present the Destination Marketing and Community-Based Tourism capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Research a destination audience and proposition.",
+      "Create a respectful destination brand direction.",
+      "Design a community benefit approach.",
+      "Present a practical marketing and partnership plan."
+    ],
+    "tags": [
+      "destination marketing",
+      "community tourism",
+      "branding"
+    ]
+  },
+  {
+    "sequence": 31,
+    "id": "tur-005",
+    "code": "TUR-005",
+    "title": "Sustainable Tourism and Destination Management",
+    "department": "Tourism and Destination Management",
+    "level": "Advanced",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Tourism systems and local context",
+        "activity": "Complete a guided tourism systems and local context activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Visitor experience and communication",
+        "activity": "Complete a guided visitor experience and communication activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Community, safety, and sustainability",
+        "activity": "Complete a guided community, safety, and sustainability activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Destination or tour capstone",
+        "activity": "Submit and present the Sustainable Tourism and Destination Management capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Assess economic, social, and environmental impacts.",
+      "Design a community-informed stewardship action.",
+      "Define indicators for destination performance.",
+      "Present a resilience and partnership plan."
+    ],
+    "tags": [
+      "sustainable tourism",
+      "destination management",
+      "resilience"
+    ]
+  },
+  {
+    "sequence": 32,
+    "id": "tur-006",
+    "code": "TUR-006",
+    "title": "Tourism Risk, Safety, and Crisis Management",
+    "department": "Tourism and Destination Management",
+    "level": "Intermediate",
+    "durationWeeks": 8,
+    "modules": [
+      {
+        "week": "1–2",
+        "title": "Tourism systems and local context",
+        "activity": "Complete a guided tourism systems and local context activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "3–4",
+        "title": "Visitor experience and communication",
+        "activity": "Complete a guided visitor experience and communication activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "5–6",
+        "title": "Community, safety, and sustainability",
+        "activity": "Complete a guided community, safety, and sustainability activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "7–8",
+        "title": "Destination or tour capstone",
+        "activity": "Submit and present the Tourism Risk, Safety, and Crisis Management capstone evidence.",
+        "estimatedHours": 8
+      }
+    ],
+    "outcomes": [
+      "Identify common visitor and operational risks.",
+      "Create a practical safety checklist.",
+      "Design an escalation and communication plan.",
+      "Reflect on safeguarding, inclusion, and cultural respect."
+    ],
+    "tags": [
+      "tourism safety",
+      "risk",
+      "crisis response"
+    ]
+  },
+  {
+    "sequence": 33,
+    "id": "xdp-001",
+    "code": "XDP-001",
+    "title": "Business in Hospitality: Hotel Revenue and Operations Management",
+    "department": "Interdisciplinary",
+    "level": "Advanced",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Shared problem and sector context",
+        "activity": "Complete a guided shared problem and sector context activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Cross-department methods",
+        "activity": "Complete a guided cross-department methods activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Integrated practical delivery",
+        "activity": "Complete a guided integrated practical delivery activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Portfolio capstone and reflection",
+        "activity": "Submit and present the Business in Hospitality: Hotel Revenue and Operations Management capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Analyse a hotel operating challenge.",
+      "Connect revenue, staffing, procurement, and guest outcomes.",
+      "Use a simple technology-enabled performance dashboard.",
+      "Defend an integrated improvement recommendation."
+    ],
+    "tags": [
+      "interdisciplinary",
+      "hotel revenue",
+      "integrated operations"
+    ]
+  },
+  {
+    "sequence": 34,
+    "id": "xdp-002",
+    "code": "XDP-002",
+    "title": "IT and Technology in Tourism: Digital Tour Operations",
+    "department": "Interdisciplinary",
+    "level": "Intermediate",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Shared problem and sector context",
+        "activity": "Complete a guided shared problem and sector context activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Cross-department methods",
+        "activity": "Complete a guided cross-department methods activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Integrated practical delivery",
+        "activity": "Complete a guided integrated practical delivery activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Portfolio capstone and reflection",
+        "activity": "Submit and present the IT and Technology in Tourism: Digital Tour Operations capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Map a digital tour-operation workflow.",
+      "Design a booking and customer record process.",
+      "Create a practical analytics dashboard.",
+      "Evaluate data responsibility and usability."
+    ],
+    "tags": [
+      "interdisciplinary",
+      "digital tourism",
+      "tour operations"
+    ]
+  },
+  {
+    "sequence": 35,
+    "id": "xdp-003",
+    "code": "XDP-003",
+    "title": "IT in Hospitality: Property Systems and Guest Experience",
+    "department": "Interdisciplinary",
+    "level": "Intermediate",
+    "durationWeeks": 8,
+    "modules": [
+      {
+        "week": "1–2",
+        "title": "Shared problem and sector context",
+        "activity": "Complete a guided shared problem and sector context activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "3–4",
+        "title": "Cross-department methods",
+        "activity": "Complete a guided cross-department methods activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "5–6",
+        "title": "Integrated practical delivery",
+        "activity": "Complete a guided integrated practical delivery activity using a Liberian or regional case study.",
+        "estimatedHours": 8
+      },
+      {
+        "week": "7–8",
+        "title": "Portfolio capstone and reflection",
+        "activity": "Submit and present the IT in Hospitality: Property Systems and Guest Experience capstone evidence.",
+        "estimatedHours": 8
+      }
+    ],
+    "outcomes": [
+      "Translate guest needs into a property workflow.",
+      "Configure roles, data fields, and operational steps.",
+      "Apply guest-data protection principles.",
+      "Produce a report that supports service improvement."
+    ],
+    "tags": [
+      "interdisciplinary",
+      "PMS",
+      "guest experience"
+    ]
+  },
+  {
+    "sequence": 36,
+    "id": "xdp-004",
+    "code": "XDP-004",
+    "title": "Sustainable Hospitality and Tourism Management",
+    "department": "Interdisciplinary",
+    "level": "Advanced",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Shared problem and sector context",
+        "activity": "Complete a guided shared problem and sector context activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Cross-department methods",
+        "activity": "Complete a guided cross-department methods activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Integrated practical delivery",
+        "activity": "Complete a guided integrated practical delivery activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Portfolio capstone and reflection",
+        "activity": "Submit and present the Sustainable Hospitality and Tourism Management capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Audit a service-sector sustainability challenge.",
+      "Engage community and operational stakeholders respectfully.",
+      "Define measurable improvement indicators.",
+      "Use technology to track and communicate progress."
+    ],
+    "tags": [
+      "interdisciplinary",
+      "sustainability",
+      "service-sector leadership"
+    ]
+  },
+  {
+    "sequence": 37,
+    "id": "xdp-005",
+    "code": "XDP-005",
+    "title": "Digital Marketing for Hospitality and Tourism",
+    "department": "Interdisciplinary",
+    "level": "Intermediate",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Shared problem and sector context",
+        "activity": "Complete a guided shared problem and sector context activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Cross-department methods",
+        "activity": "Complete a guided cross-department methods activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Integrated practical delivery",
+        "activity": "Complete a guided integrated practical delivery activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Portfolio capstone and reflection",
+        "activity": "Submit and present the Digital Marketing for Hospitality and Tourism capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Research a service-sector audience.",
+      "Design a multi-channel campaign concept.",
+      "Create accessible content and tracking measures.",
+      "Present a conversion and learning plan."
+    ],
+    "tags": [
+      "interdisciplinary",
+      "digital marketing",
+      "hospitality tourism"
+    ]
+  },
+  {
+    "sequence": 38,
+    "id": "xdp-006",
+    "code": "XDP-006",
+    "title": "Data and AI for Hospitality and Tourism Decisions",
+    "department": "Interdisciplinary",
+    "level": "Advanced",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Shared problem and sector context",
+        "activity": "Complete a guided shared problem and sector context activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Cross-department methods",
+        "activity": "Complete a guided cross-department methods activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Integrated practical delivery",
+        "activity": "Complete a guided integrated practical delivery activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Portfolio capstone and reflection",
+        "activity": "Submit and present the Data and AI for Hospitality and Tourism Decisions capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Prepare service-sector data for analysis.",
+      "Build a simple forecast or decision dashboard.",
+      "Evaluate an AI-assisted recommendation responsibly.",
+      "Write a decision memo with limitations."
+    ],
+    "tags": [
+      "interdisciplinary",
+      "data and AI",
+      "responsible decisions"
+    ]
+  },
+  {
+    "sequence": 39,
+    "id": "xdp-007",
+    "code": "XDP-007",
+    "title": "Entrepreneurship in Tourism and Hospitality",
+    "department": "Interdisciplinary",
+    "level": "Advanced",
+    "durationWeeks": 12,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Shared problem and sector context",
+        "activity": "Complete a guided shared problem and sector context activity using a Liberian or regional case study.",
+        "estimatedHours": 12
+      },
+      {
+        "week": "4–6",
+        "title": "Cross-department methods",
+        "activity": "Complete a guided cross-department methods activity using a Liberian or regional case study.",
+        "estimatedHours": 12
+      },
+      {
+        "week": "7–9",
+        "title": "Integrated practical delivery",
+        "activity": "Complete a guided integrated practical delivery activity using a Liberian or regional case study.",
+        "estimatedHours": 12
+      },
+      {
+        "week": "10–12",
+        "title": "Portfolio capstone and reflection",
+        "activity": "Submit and present the Entrepreneurship in Tourism and Hospitality capstone evidence.",
+        "estimatedHours": 12
+      }
+    ],
+    "outcomes": [
+      "Validate a local service-sector opportunity.",
+      "Design an enterprise model and operating plan.",
+      "Build a responsible customer and community proposition.",
+      "Present an investor-style pitch with milestones."
+    ],
+    "tags": [
+      "interdisciplinary",
+      "enterprise",
+      "tourism hospitality"
+    ]
+  },
+  {
+    "sequence": 40,
+    "id": "xdp-008",
+    "code": "XDP-008",
+    "title": "Event Technology and Experience Design",
+    "department": "Interdisciplinary",
+    "level": "Intermediate",
+    "durationWeeks": 10,
+    "modules": [
+      {
+        "week": "1–3",
+        "title": "Shared problem and sector context",
+        "activity": "Complete a guided shared problem and sector context activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "4–5",
+        "title": "Cross-department methods",
+        "activity": "Complete a guided cross-department methods activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "6–8",
+        "title": "Integrated practical delivery",
+        "activity": "Complete a guided integrated practical delivery activity using a Liberian or regional case study.",
+        "estimatedHours": 10
+      },
+      {
+        "week": "9–10",
+        "title": "Portfolio capstone and reflection",
+        "activity": "Submit and present the Event Technology and Experience Design capstone evidence.",
+        "estimatedHours": 10
+      }
+    ],
+    "outcomes": [
+      "Design an event experience around participant needs.",
+      "Create a digital registration or communication flow.",
+      "Build a realistic budget and delivery plan.",
+      "Address accessibility, safety, and operational risk."
+    ],
+    "tags": [
+      "interdisciplinary",
+      "event technology",
+      "experience design"
+    ]
+  },
+  {
+    "sequence": 41,
+    "id": "gac-001",
+    "code": "GAC-001",
+    "title": "Workplace and Digital Foundations",
+    "department": "GentsAcademy Core",
+    "level": "Beginner",
+    "durationWeeks": 4,
+    "modules": [
+      {
+        "week": "1–1",
+        "title": "Workplace communication and professionalism",
+        "activity": "Complete a guided workplace communication and professionalism activity using a Liberian or regional case study.",
+        "estimatedHours": 4
+      },
+      {
+        "week": "2–2",
+        "title": "Digital productivity and collaboration",
+        "activity": "Complete a guided digital productivity and collaboration activity using a Liberian or regional case study.",
+        "estimatedHours": 4
+      },
+      {
+        "week": "3–3",
+        "title": "Employability, enterprise, and sustainability",
+        "activity": "Complete a guided employability, enterprise, and sustainability activity using a Liberian or regional case study.",
+        "estimatedHours": 4
+      },
+      {
+        "week": "4–4",
+        "title": "Personal portfolio and next steps",
+        "activity": "Submit and present the Workplace and Digital Foundations capstone evidence.",
+        "estimatedHours": 4
+      }
+    ],
+    "outcomes": [
+      "Communicate clearly in a workplace context.",
+      "Use common digital productivity and collaboration tools.",
+      "Demonstrate professional conduct, teamwork, and safeguarding awareness.",
+      "Create a personal portfolio and next-step plan."
+    ],
+    "tags": [
+      "shared core",
+      "employability",
+      "professionalism",
+      "digital productivity"
+    ]
+  }
+]

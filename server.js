@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { courses, departments, pathways, certificateRules } from './data/catalogue.js';
+import { materialsForCourse } from './data/materials.js';
 
 const { Pool } = pg;
 const __filename = fileURLToPath(import.meta.url);
@@ -158,11 +159,17 @@ app.get('/api/courses', (req, res) => {
   res.json({ courses: results, total: results.length });
 });
 
+app.get('/api/courses/:id/materials', (req, res) => {
+  const course = findCourse(req.params.id);
+  if (!course) return res.status(404).json({ error: 'Course not found.' });
+  res.json({ courseId: course.id, courseTitle: course.title, weeklyLessons: materialsForCourse(course) });
+});
+
 app.get('/api/courses/:id', (req, res) => {
   const course = findCourse(req.params.id);
   if (!course) return res.status(404).json({ error: 'Course not found.' });
   const related = courses.filter((item) => item.id !== course.id && (item.primaryDepartment === course.primaryDepartment || item.tags.some((tag) => course.tags.includes(tag)))).slice(0, 4);
-  res.json({ course, related });
+  res.json({ course, related, weeklyLessons: materialsForCourse(course) });
 });
 
 app.post('/api/enrollments', async (req, res) => {

@@ -8,7 +8,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "test": "node --test"
+    "test": "node --test",
+    "generate:materials": "node scripts/generate-material-pdfs.mjs"
   },
   "engines": {
     "node": ">=20"

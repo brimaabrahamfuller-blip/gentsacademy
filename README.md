@@ -70,3 +70,13 @@ The app is intentionally English-only. There is no language selector, duplicate 
 ## Attribution
 
 Maintained and delivered under **Brima Abraham Fuller**, `brimaabrahamfuller-blip`, `brimaabrahamfuller@gmail.com`.
+
+## Weekly learning materials
+
+The weekly materials layer is generated for every course in catalogue order. The 41-course registry expands into 384 calendar-week lessons. Each lesson has an original graphical GentsAcademy PDF study guide at `public/materials/{course-id}/week-{n}.pdf`, an attributed open or openly accessible academic reading, a university or professor-led video link, a guided activity, a reflection prompt, and an evidence target.
+
+`data/materials.js` contains the source-attributed material library and deterministic lesson mapping. `data/weekly-materials.json` is the generated manifest used for audits and future content operations. Run `npm run generate:materials` after changing course weeks, learning outcomes, or source assignments. The temporary Typst workspace is ignored; generated PDFs are tracked deliverables and are served by both Render and Netlify.
+
+The PDFs are original study guides and do not reproduce proprietary textbooks or lecture files. External resources remain owned by their providers and are linked with their source, provider, kind, license or access note, and official URL. Learners can open video sources in a new tab, and direct embeddable YouTube lessons appear in the weekly lesson card when an official video URL is available.
+
+The course interface uses CSS media queries and a small device profile on `document.documentElement` to support desktop, tablet, Android, and iOS browser widths. Weekly material cards use a side-by-side reading/video layout on larger screens and stack into a touch-friendly single-column flow on smaller screens.

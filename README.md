@@ -1,235 +1,72 @@
-# GentsAcademy Platform - Quick Start Guide
+# GentsAcademy
 
-## 📚 Platform Overview
+GentsAcademy is a single-language English learning web app for free, practical, and Liberian-grounded education. The application is implemented in JavaScript from the browser through the Node.js backend, matching the primary implementation language used by GentsConcerts while preserving the established GentsAcademy dark, navy, and gold visual identity.
 
-GentsAcademy is a free online learning platform with 10 in-demand courses in Business, AI, and Technology. All content is free, and students can earn certificates upon completion.
+## What changed
 
----
+The legacy multi-page HTML implementation has been replaced with one application shell in `public/index.html`, one responsive stylesheet in `public/styles.css`, and one client application in `public/app.js`. The old authentication, admin, dashboard, course, and certificate scripts were removed because they duplicated state and could not share a reliable catalogue registry.
 
-## 🚀 Getting Started
+The curriculum strategy is now represented by one central registry at `data/catalogue.js`. It powers the homepage count, department cards, catalogue filters, course detail views, pathways, assessment metadata, capstones, career roles, support information, and certificate rules. Courses have one primary department and may have secondary departments and tags. AI is grouped under IT and Technology rather than acting as a separate academic department.
 
-### 1. **View the Landing Page**
-   - Open `index.html` in your browser
-   - Features hero section, course showcase, testimonials, and value propositions
+The launch registry contains the complete recommended course families and shared core, including Business and Entrepreneurship, IT and Technology, Hospitality Management, Tourism and Destination Management, Interdisciplinary programmes, and `GAC-001 Workplace and Digital Foundations`. The homepage reports the registry count instead of using a manually maintained claim.
 
-### 2. **Browse Courses**
-   - Click "Explore Courses" or navigate to `courses.html`
-   - Search for courses and filter by category (Business, AI, Technology, Combined)
-   - Sort by popularity, rating, or duration
+## Application structure
 
-### 3. **Sign Up / Login**
-   - Click "Sign Up Free" or "Login"
-   - Go to `auth.html`
-   - New users: Create account with email and password (8+ characters)
-   - Existing users: Login with your credentials
+| Path | Purpose |
+| --- | --- |
+| `server.js` | Express server, API routes, security headers, static hosting, and database adapter |
+| `public/index.html` | Single English application shell |
+| `public/app.js` | Client-side router, catalogue views, enrolment, progress, dashboard, and contact flow |
+| `public/styles.css` | Preserved GentsAcademy design system and responsive styling |
+| `data/catalogue.js` | Central course, pathway, department, and certificate registry |
+| `render.yaml` | Render web service and PostgreSQL Blueprint configuration |
+| `.env.example` | Environment variable template |
 
-### 4. **Take a Course**
-   - From courses page, click "Explore Course"
-   - View course details, learning outcomes, and curriculum
-   - Click "Enroll Now" to start the course (requires login)
-   - Watch videos, read materials, and mark modules complete
+## Run locally
 
-### 5. **Student Dashboard**
-   - Go to `dashboard.html` after login
-   - Track progress in enrolled courses
-   - View and download earned certificates
-   - Manage account settings
+Install dependencies and start the server:
 
-### 6. **Admin Dashboard** (Password Protected)
-   - Navigate to `admin.html`
-   - Enter password: `GentsAdmin2025`
-   - Manage courses, view students, issue certificates
-   - Monitor system statistics and activity
-
----
-
-## 📂 File Structure
-
-```
-gents-academy/
-├── index.html                    # Landing page
-├── courses.html                  # Course catalogue
-├── course-detail.html            # Individual course page
-├── dashboard.html                # Student dashboard
-├── auth.html                     # Login/Register
-├── admin.html                    # Admin dashboard
-├── css/
-│   ├── style.css                # Main stylesheet with design system
-│   ├── dashboard.css            # Dashboard styles
-│   └── admin.css                # Admin styles
-├── js/
-│   ├── config.js                # Configuration and API settings
-│   ├── main.js                  # Core utilities and auth helpers
-│   ├── auth.js                  # Login/Register logic
-│   ├── courses.js               # Courses page logic
-│   ├── course-detail.js         # Course detail page logic
-│   ├── dashboard.js             # Dashboard functionality
-│   ├── certificate.js           # Certificate generation
-│   └── admin.js                 # Admin dashboard logic
-├── data/
-│   └── courses.json             # All course data with modules
-└── assets/
-    └── images/                  # Images folder
+```bash
+npm install
+npm start
 ```
 
----
+Open `http://localhost:10000`. If `DATABASE_URL` is not provided, the API uses an in-memory fallback so the full user flow can be tested locally. For persistent data, provide a PostgreSQL connection string.
 
-## 🎓 10 Courses Included
+## API surface
 
-1. **Business Fundamentals & Entrepreneurship** (6 weeks, Beginner)
-2. **Digital Marketing & Social Media Management** (6 weeks, Intermediate)
-3. **Financial Literacy & Accounting Basics** (5 weeks, Beginner)
-4. **Introduction to Artificial Intelligence** (5 weeks, Beginner)
-5. **Prompt Engineering & Working with AI Tools** (4 weeks, Intermediate)
-6. **Web Development (HTML, CSS, JavaScript)** (8 weeks, Beginner)
-7. **Data Entry & Microsoft Office Productivity** (4 weeks, Beginner)
-8. **Graphic Design Fundamentals (Canva + Figma)** (6 weeks, Beginner)
-9. **Cybersecurity Awareness & Digital Safety** (4 weeks, Beginner)
-10. **Business + AI Combined: Running a Smart Business** (7 weeks, Intermediate)
+| Method | Endpoint | Purpose |
+| --- | --- | --- |
+| `GET` | `/api/health` | Service and database health check |
+| `GET` | `/api/catalogue-summary` | Registry totals used by the homepage |
+| `GET` | `/api/departments` | Academic departments |
+| `GET` | `/api/pathways` | Career pathways and their course members |
+| `GET` | `/api/certificate-rules` | Credential completion rules |
+| `GET` | `/api/courses` | Searchable and filterable course registry |
+| `GET` | `/api/courses/:id` | Course detail and related courses |
+| `POST` | `/api/enrollments` | Create or update a learner enrollment |
+| `GET` | `/api/learners/:email` | Load enrollments and saved module progress |
+| `POST` | `/api/progress` | Save completed module progress |
+| `POST` | `/api/contact` | Submit a learner or partner message |
+| `GET` | `/api/verification/:certificateId` | Certificate verification placeholder endpoint |
 
----
+## Render deployment
 
-## 🎨 Design System
+The included `render.yaml` defines a Node web service with a PostgreSQL database, health checks, automatic deployment from the GitHub repository, and the following environment variables:
 
-### Colors
-- **Primary Background:** #0A0A0F (Deep Dark)
-- **Surface Cards:** #12121A (Dark Secondary)
-- **Navy Accent:** #0D1B4B (Professional Navy)
-- **Gold Accent:** #C9A84C (Premium Gold)
-- **Text Primary:** #F5F5F5 (White)
-- **Text Secondary:** #9A9AB0 (Muted)
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `NODE_ENV` | Yes | Set to `production` on Render |
+| `PORT` | No | Render supplies the port; local default is `10000` |
+| `DATABASE_URL` | Yes for persistence | PostgreSQL connection string supplied by the Render database |
+| `DATABASE_SSL` | Yes | Keep `true` for Render PostgreSQL TLS |
 
-### Typography
-- **Headings:** Playfair Display (serif)
-- **Body/UI:** Inter (sans-serif)
-- **Premium, modern dark theme inspired by Coursera + Apple**
+The service should be connected to the `brimaabrahamfuller-blip/gentsacademy` repository in Render. After the first deployment, confirm `/api/health` returns `ok: true` and `database: postgresql`.
 
----
+## Quality notes
 
-## 🔐 Authentication
+The app is intentionally English-only. There is no language selector, duplicate translated content tree, or language-specific legacy route. Learner-facing flows are mobile-friendly, use accessible labels and focus styles, and include low-bandwidth support language on course pages. Certificates are described as GentsAcademy completion or pathway certificates unless an external recognition or partnership is documented.
 
-### Demo Account
-- **Email:** demo@example.com
-- **Password:** password123
+## Attribution
 
-### How It Works
-- Users create accounts via registration form
-- Sessions stored in localStorage (demo implementation)
-- Admin password: `GentsAdmin2025`
-- In production, integrate with Supabase for real authentication
-
----
-
-## 📊 Features
-
-### For Students
-✅ Browse and search courses  
-✅ Enroll in courses (free)  
-✅ Watch embedded YouTube lectures  
-✅ Access downloadable resources  
-✅ Track progress with module completion  
-✅ Earn and download certificates  
-✅ Manage account and preferences  
-
-### For Admins
-✅ View system statistics  
-✅ Manage courses (add/edit/delete)  
-✅ Monitor enrolled students  
-✅ Manage certificates  
-✅ View recent activity  
-
----
-
-## 📱 Responsive Design
-
-All pages are fully responsive:
-- **Desktop:** Full layout with sidebar support
-- **Tablet:** Optimized grid layouts
-- **Mobile:** Single column, touch-friendly interactions
-
----
-
-## 🎯 Key Technologies
-
-- **HTML5** - Semantic markup
-- **CSS3** - Variables, Flexbox, CSS Grid
-- **Vanilla JavaScript** - No frameworks
-- **Local Storage** - Session management (demo)
-- **Canvas API** - Certificate generation
-- **YouTube Embeds** - Video content
-
----
-
-## 🔄 Data Flow
-
-### Course Progress
-1. Student enrolls in course → stored in localStorage
-2. Student completes modules → progress tracked
-3. All modules completed → certificate auto-generated
-4. Certificate available for download
-
-### Certificates
-- Generated with student name, course, completion date
-- Unique certificate ID for verification
-- Downloadable as image/PDF
-- Can be shared on social media
-
----
-
-## 🛠️ Customization
-
-### Change Admin Password
-Edit `js/admin.js` line 10:
-```javascript
-const ADMIN_PASSWORD = 'YourNewPassword';
-```
-
-### Update Course Content
-Edit `data/courses.json` to add/modify courses
-
-### Customize Colors
-Edit CSS variables in `css/style.css` `:root` section
-
-### Change Branding
-- Update logo in assets folder
-- Modify brand text in navigation
-
----
-
-## ⚙️ Production Deployment
-
-### Setup Supabase Integration
-1. Create Supabase project at supabase.com
-2. Update credentials in `js/config.js`
-3. Replace localStorage with Supabase calls in:
-   - `js/auth.js`
-   - `js/dashboard.js`
-   - `js/admin.js`
-
-### Enable jsPDF for Certificates
-Include jsPDF CDN in HTML files:
-```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-```
-
-### Deploy Platform
-- Host on Vercel, Netlify, or traditional web server
-- Ensure all paths are relative
-- Test on multiple devices
-
----
-
-## 📞 Support
-
-For questions or issues:
-- Review the codebase comments
-- Check individual file headers for function documentation
-- Test in browser DevTools (F12)
-
----
-
-## 📄 License
-
-GentsAcademy - Built for Liberia's Future 🇱🇷
-
-**Made with 💙 for free education**
+Maintained and delivered under **Brima Abraham Fuller**, `brimaabrahamfuller-blip`, `brimaabrahamfuller@gmail.com`.

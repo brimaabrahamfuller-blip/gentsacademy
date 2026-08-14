@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: gentsacademy
+    runtime: node
+    repo: https://github.com/brimaabrahamfuller-blip/gentsacademy
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: gentsacademy-db
+          property: connectionString
+      - key: DATABASE_SSL
+        value: "true"
+
+databases:
+  - name: gentsacademy-db
+    databaseName: gentsacademy
+    user: gentsacademy
+    plan: free

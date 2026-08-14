@@ -1,0 +1,22 @@
+{
+  "name": "gentsacademy",
+  "version": "3.0.0",
+  "private": true,
+  "description": "GentsAcademy single-language learning web app and API",
+  "type": "module",
+  "author": "Brima Abraham Fuller <brimaabrahamfuller@gmail.com>",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "morgan": "^1.10.0",
+    "pg": "^8.16.3"
+  }
+}

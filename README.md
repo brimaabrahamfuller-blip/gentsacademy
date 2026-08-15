@@ -10,6 +10,28 @@ The curriculum strategy is now represented by one central registry at `data/cata
 
 The launch registry contains the complete recommended course families and shared core, including Business and Entrepreneurship, IT and Technology, Hospitality Management, Tourism and Destination Management, Interdisciplinary programmes, and `GAC-001 Workplace and Digital Foundations`. The homepage reports the registry count instead of using a manually maintained claim.
 
+## Live preview
+
+The live GentsAcademy application is available at [gentsacademy.netlify.app](https://gentsacademy.netlify.app/) and the direct Render deployment is available at [gentsacademy.onrender.com](https://gentsacademy.onrender.com/). The screenshots below were captured from the deployed application and show the principal learner-facing flows.
+
+### Homepage
+
+The homepage presents the academy’s Liberian digital-skills positioning, course and pathway totals, and the “Education Is The New Freedom” learning proposition.
+
+![GentsAcademy homepage](docs/screenshots/gentsacademy-home.jpg)
+
+### Academic departments
+
+The department-first catalogue organizes the learning experience into six visual academic areas, including business, technology, hospitality, tourism, interdisciplinary study, and the shared core.
+
+![GentsAcademy academic departments catalogue](docs/screenshots/gentsacademy-departments.jpg)
+
+### Career pathways
+
+The pathways view connects course sequences to practical outcomes such as hotel operations, digital tourism, hospitality entrepreneurship, and responsible service-sector leadership.
+
+![GentsAcademy career pathways](docs/screenshots/gentsacademy-pathways.jpg)
+
 ## Application structure
 
 | Path | Purpose |

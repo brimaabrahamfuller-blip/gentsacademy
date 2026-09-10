@@ -1,18 +1,18 @@
 :root {
-  --bg-primary: #0A0A0F;
-  --bg-secondary: #12121A;
-  --bg-tertiary: #1A1A24;
-  --navy: #0D1B4B;
-  --gold: #C9A84C;
-  --gold-light: #D9B85D;
+  --bg-primary: #071A2D;
+  --bg-secondary: #0B2138;
+  --bg-tertiary: #143B68;
+  --navy: #0B2D52;
+  --gold: #F2EADC;
+  --gold-light: #FFF9F0;
   --text-primary: #F5F5F5;
   --text-secondary: #9A9AB0;
   --text-muted: #6A6A7A;
-  --border-color: #2A2A36;
-  --blue: #3B82F6;
-  --red: #E76F51;
-  --green: #54B689;
-  --purple: #8B7CF6;
+  --border-color: #244667;
+  --blue: #B51235;
+  --red: #D41F45;
+  --green: #D98B9A;
+  --purple: #C29AA8;
   --font-ui: "Inter", sans-serif;
   --font-heading: "Playfair Display", serif;
   --radius-sm: .5rem;
@@ -32,9 +32,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 h1, h2, h3, h4 { font-family: var(--font-heading); line-height: 1.15; margin: 0; }
 p { color: var(--text-secondary); }
 .container { width: min(1200px, calc(100% - 2rem)); margin: 0 auto; }
-.navbar { position: sticky; top: 0; z-index: 20; background: rgba(10,10,15,.94); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-color); }
+.navbar { position: sticky; top: 0; z-index: 20; background: rgba(7,26,45,.94); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-color); }
 .navbar-content { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-.brand { display: inline-flex; align-items: center; gap: .75rem; color: var(--text-primary); font-weight: 700; }
+.brand { display: inline-flex; align-items: center; gap: .75rem; color: var(--text-primary); font-weight: 700; } .brand-logo { display: block; width: 230px; height: 58px; object-fit: contain; object-position: left center; } .brand-logo { display: block; width: 230px; height: 58px; object-fit: contain; object-position: left center; } .brand-logo { display: block; width: 230px; height: 58px; object-fit: contain; object-position: left center; }
 .logo { width: 42px; height: 42px; display: grid; place-items: center; border-radius: var(--radius-md); color: var(--navy); background: linear-gradient(135deg,var(--gold),var(--gold-light)); font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; }
 .brand-text { color: var(--gold-light); }
 .nav-links { display: flex; gap: 1.25rem; align-items: center; list-style: none; margin: 0; padding: 0; }
